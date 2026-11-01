@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import { withTokenInspector } from '../../../../.storybook/TokenInspector';
 import { Button, type ButtonAppearance, type ButtonSize, type ButtonVariant } from './Button';
 
 const Plus = () => (
@@ -8,24 +9,59 @@ const Plus = () => (
   </svg>
 );
 
+/** Story-only switches: the icons themselves are fixed, the controls just turn them on or off. */
+type ButtonStoryArgs = React.ComponentProps<typeof Button> & {
+  showLeadingIcon?: boolean;
+  showTrailingIcon?: boolean;
+};
+
 const meta = {
   title: 'Inputs/Button',
   component: Button,
-  args: { children: 'Button', appearance: 'filled', variant: 'primary', size: 'medium' },
-  argTypes: {
-    appearance: { control: 'inline-radio', options: ['filled', 'outlined', 'text'] },
-    variant: { control: 'inline-radio', options: ['primary', 'neutral', 'destructive', 'inverse'] },
-    size: { control: 'inline-radio', options: ['small', 'medium', 'large'] },
-    leadingIcon: { control: false },
-    trailingIcon: { control: false },
+  decorators: [withTokenInspector('.ingrid-button')],
+  args: {
+    children: 'Button',
+    appearance: 'filled',
+    variant: 'primary',
+    size: 'medium',
+    showLeadingIcon: false,
+    showTrailingIcon: false,
+    isDisabled: false,
   },
-} satisfies Meta<typeof Button>;
+  // Controls are listed in this order. Names match the Figma component properties.
+  argTypes: {
+    children: { name: 'Label', control: 'text', description: 'Button text. Every button needs a label.' },
+    appearance: { name: 'Type', control: 'inline-radio', options: ['filled', 'outlined', 'text'] },
+    variant: {
+      name: 'Color',
+      control: 'inline-radio',
+      options: ['primary', 'neutral', 'destructive', 'inverse'],
+      description: 'Inverse is meant for dark backgrounds.',
+    },
+    size: { name: 'Size', control: 'inline-radio', options: ['small', 'medium', 'large'] },
+    showLeadingIcon: { name: 'Leading icon', control: 'boolean' },
+    showTrailingIcon: { name: 'Trailing icon', control: 'boolean' },
+    isDisabled: { name: 'Disabled', control: 'boolean' },
+    leadingIcon: { table: { disable: true } },
+    trailingIcon: { table: { disable: true } },
+  },
+  parameters: {
+    controls: {
+      include: ['Label', 'Type', 'Color', 'Size', 'Leading icon', 'Trailing icon', 'Disabled'],
+    },
+  },
+  render: ({ showLeadingIcon, showTrailingIcon, leadingIcon, trailingIcon, ...args }) => (
+    <Button
+      {...args}
+      leadingIcon={showLeadingIcon ? <Plus /> : leadingIcon}
+      trailingIcon={showTrailingIcon ? <Plus /> : trailingIcon}
+    />
+  ),
+} satisfies Meta<ButtonStoryArgs>;
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Playground: Story = {};
-export const WithIcons: Story = { args: { leadingIcon: <Plus />, trailingIcon: <Plus /> } };
-export const IconOnly: Story = { args: { children: undefined, leadingIcon: <Plus />, 'aria-label': 'Add' } };
 export const Disabled: Story = { args: { isDisabled: true } };
 
 const appearances: ButtonAppearance[] = ['filled', 'outlined', 'text'];
@@ -34,6 +70,7 @@ const sizes: ButtonSize[] = ['small', 'medium', 'large'];
 
 /** Every Appearance × Variant × Size, like the Figma component set. Inverse sits on the inverse surface. */
 export const AllVariants: Story = {
+  parameters: { tokenInspector: { disable: true } },
   render: () => (
     <div style={{ display: 'grid', gap: 24 }}>
       {appearances.map((appearance) => (
