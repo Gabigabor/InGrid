@@ -6,7 +6,7 @@ import path from 'node:path';
 import { chromium } from 'playwright';
 
 const dir = path.resolve('storybook-static');
-const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml' };
+const types = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.woff2': 'font/woff2', '.png': 'image/png', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml' };
 const server = http.createServer((req, res) => {
   const file = path.join(dir, decodeURIComponent(new URL(req.url, 'http://x').pathname));
   fs.readFile(fs.existsSync(file) && fs.statSync(file).isFile() ? file : path.join(dir, 'index.html'), (err, data) => {
@@ -20,9 +20,16 @@ const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 const errors = [];
 page.on('pageerror', (e) => errors.push(e.message));
+page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
+page.on('response', (r) => r.status() >= 400 && errors.push(`${r.status()} ${r.url()}`));
 for (const theme of ['light', 'dark']) {
   await page.goto(`http://localhost:6007/iframe.html?id=inputs-button--all-variants&globals=theme:${theme}`);
-  await page.locator('.ingrid-button').first().waitFor();
+  try {
+    await page.locator('.ingrid-button').first().waitFor({ timeout: 20000 });
+  } catch (e) {
+    console.error(`Story did not render (${theme}):\n${errors.join('\n')}`);
+    throw e;
+  }
   await page.screenshot({ path: `screenshots/button-${theme}.png`, fullPage: true });
 }
 await browser.close();
