@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+
+      - name: Tokens are built from the committed Figma export
+        run: npm run tokens:check
+      - name: Component CSS uses only Ingrid tokens
+        run: npm run lint:css
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Build Storybook
+        run: npm run build-storybook
+
+      - name: Screenshot every Button variant (Light and Dark)
+        run: |
+          npx playwright install --with-deps chromium
+          node scripts/screenshot-stories.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: button-screenshots
+          path: screenshots/

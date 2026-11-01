@@ -1,0 +1,138 @@
+/* Generated from Figma by packages/tokens/scripts/build.mjs. Do not edit by hand. */
+
+/* One class per Figma text style. All values come from the Typography collection. */
+
+/* Display/Large: Display large: the largest text, for short hero and marketing lines. */
+.ingrid-text-display-large {
+  font-family: var(--ingrid-display-large-font-family);
+  font-size: var(--ingrid-display-large-font-size);
+  line-height: var(--ingrid-display-large-line-height);
+  font-weight: var(--ingrid-display-large-font-weight);
+  letter-spacing: var(--ingrid-display-large-letter-spacing);
+}
+
+/* Display/Medium: Display medium: the largest text, for short hero and marketing lines. */
+.ingrid-text-display-medium {
+  font-family: var(--ingrid-display-medium-font-family);
+  font-size: var(--ingrid-display-medium-font-size);
+  line-height: var(--ingrid-display-medium-line-height);
+  font-weight: var(--ingrid-display-medium-font-weight);
+  letter-spacing: var(--ingrid-display-medium-letter-spacing);
+}
+
+/* Display/Small: Display small: the largest text, for short hero and marketing lines. */
+.ingrid-text-display-small {
+  font-family: var(--ingrid-display-small-font-family);
+  font-size: var(--ingrid-display-small-font-size);
+  line-height: var(--ingrid-display-small-line-height);
+  font-weight: var(--ingrid-display-small-font-weight);
+  letter-spacing: var(--ingrid-display-small-letter-spacing);
+}
+
+/* Headline/Large: Headline large: page and section headings. */
+.ingrid-text-headline-large {
+  font-family: var(--ingrid-headline-large-font-family);
+  font-size: var(--ingrid-headline-large-font-size);
+  line-height: var(--ingrid-headline-large-line-height);
+  font-weight: var(--ingrid-headline-large-font-weight);
+  letter-spacing: var(--ingrid-headline-large-letter-spacing);
+}
+
+/* Headline/Medium: Headline medium: page and section headings. */
+.ingrid-text-headline-medium {
+  font-family: var(--ingrid-headline-medium-font-family);
+  font-size: var(--ingrid-headline-medium-font-size);
+  line-height: var(--ingrid-headline-medium-line-height);
+  font-weight: var(--ingrid-headline-medium-font-weight);
+  letter-spacing: var(--ingrid-headline-medium-letter-spacing);
+}
+
+/* Headline/Small: Headline small: page and section headings. */
+.ingrid-text-headline-small {
+  font-family: var(--ingrid-headline-small-font-family);
+  font-size: var(--ingrid-headline-small-font-size);
+  line-height: var(--ingrid-headline-small-line-height);
+  font-weight: var(--ingrid-headline-small-font-weight);
+  letter-spacing: var(--ingrid-headline-small-letter-spacing);
+}
+
+/* Title/Large: Title large: titles of components such as cards, dialogs and list items. */
+.ingrid-text-title-large {
+  font-family: var(--ingrid-title-large-font-family);
+  font-size: var(--ingrid-title-large-font-size);
+  line-height: var(--ingrid-title-large-line-height);
+  font-weight: var(--ingrid-title-large-font-weight);
+  letter-spacing: var(--ingrid-title-large-letter-spacing);
+}
+
+/* Title/Medium: Title medium: titles of components such as cards, dialogs and list items. */
+.ingrid-text-title-medium {
+  font-family: var(--ingrid-title-medium-font-family);
+  font-size: var(--ingrid-title-medium-font-size);
+  line-height: var(--ingrid-title-medium-line-height);
+  font-weight: var(--ingrid-title-medium-font-weight);
+  letter-spacing: var(--ingrid-title-medium-letter-spacing);
+}
+
+/* Title/Small: Title small: titles of components such as cards, dialogs and list items. */
+.ingrid-text-title-small {
+  font-family: var(--ingrid-title-small-font-family);
+  font-size: var(--ingrid-title-small-font-size);
+  line-height: var(--ingrid-title-small-line-height);
+  font-weight: var(--ingrid-title-small-font-weight);
+  letter-spacing: var(--ingrid-title-small-letter-spacing);
+}
+
+/* Body/Large: Body large: running text and paragraphs. */
+.ingrid-text-body-large {
+  font-family: var(--ingrid-body-large-font-family);
+  font-size: var(--ingrid-body-large-font-size);
+  line-height: var(--ingrid-body-large-line-height);
+  font-weight: var(--ingrid-body-large-font-weight);
+  letter-spacing: var(--ingrid-body-large-letter-spacing);
+}
+
+/* Body/Medium: Body medium: running text and paragraphs. */
+.ingrid-text-body-medium {
+  font-family: var(--ingrid-body-medium-font-family);
+  font-size: var(--ingrid-body-medium-font-size);
+  line-height: var(--ingrid-body-medium-line-height);
+  font-weight: var(--ingrid-body-medium-font-weight);
+  letter-spacing: var(--ingrid-body-medium-letter-spacing);
+}
+
+/* Body/Small: Body small: running text and paragraphs. */
+.ingrid-text-body-small {
+  font-family: var(--ingrid-body-small-font-family);
+  font-size: var(--ingrid-body-small-font-size);
+  line-height: var(--ingrid-body-small-line-height);
+  font-weight: var(--ingrid-body-small-font-weight);
+  letter-spacing: var(--ingrid-body-small-letter-spacing);
+}
+
+/* Label/Large: Label large: text inside components: buttons, tabs, chips and form labels. */
+.ingrid-text-label-large {
+  font-family: var(--ingrid-label-large-font-family);
+  font-size: var(--ingrid-label-large-font-size);
+  line-height: var(--ingrid-label-large-line-height);
+  font-weight: var(--ingrid-label-large-font-weight);
+  letter-spacing: var(--ingrid-label-large-letter-spacing);
+}
+
+/* Label/Medium: Label medium: text inside components: buttons, tabs, chips and form labels. */
+.ingrid-text-label-medium {
+  font-family: var(--ingrid-label-medium-font-family);
+  font-size: var(--ingrid-label-medium-font-size);
+  line-height: var(--ingrid-label-medium-line-height);
+  font-weight: var(--ingrid-label-medium-font-weight);
+  letter-spacing: var(--ingrid-label-medium-letter-spacing);
+}
+
+/* Label/Small: Label small: text inside components: buttons, tabs, chips and form labels. */
+.ingrid-text-label-small {
+  font-family: var(--ingrid-label-small-font-family);
+  font-size: var(--ingrid-label-small-font-size);
+  line-height: var(--ingrid-label-small-line-height);
+  font-weight: var(--ingrid-label-small-font-weight);
+  letter-spacing: var(--ingrid-label-small-letter-spacing);
+}
