@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body { font: 13px/1.4 Inter, system-ui, sans-serif; margin: 16px; color: #1f1f1f; }
+      h1 { font-size: 14px; margin: 0 0 8px; }
+      p { margin: 0 0 12px; color: #5f5f5a; }
+      button { font: inherit; padding: 8px 12px; border-radius: 6px; border: 0; background: #0d99ff; color: #fff; cursor: pointer; }
+      button[disabled] { opacity: 0.4; cursor: default; }
+      .error { color: #c10007; }
+    </style>
+  </head>
+  <body>
+    <h1>Ingrid token export</h1>
+    <p id="status">Reading variables…</p>
+    <button id="download" disabled>Download ingrid.tokens.json</button>
+    <script>
+      let json = null;
+      onmessage = (event) => {
+        const msg = event.data.pluginMessage;
+        const status = document.getElementById('status');
+        if (msg.type === 'ready') {
+          json = msg.json;
+          status.textContent = `${msg.count} tokens ready. Save the file as packages/tokens/src/ingrid.tokens.json, then run npm run tokens.`;
+          document.getElementById('download').disabled = false;
+        } else if (msg.type === 'error') {
+          status.textContent = 'Export failed: ' + msg.message;
+          status.className = 'error';
+        }
+      };
+      document.getElementById('download').onclick = () => {
+        const url = URL.createObjectURL(new Blob([json], { type: 'application/json' }));
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'ingrid.tokens.json';
+        a.click();
+        URL.revokeObjectURL(url);
+      };
+    </script>
+  </body>
+</html>
