@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Preview } from '@storybook/react';
 import '../packages/tokens/dist/tokens.css';
 import '../packages/tokens/dist/text-styles.css';
