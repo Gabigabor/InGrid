@@ -1,10 +1,9 @@
-/// <reference types="vite/client" />
 // Storybook pages for browsing every Ingrid token. Everything is read from the generated
 // dist files, so these pages always match the latest Figma export (run `npm run tokens`).
 import React, { useLayoutEffect, useMemo, useRef, useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { tokens, textStyles } from '../dist/tokens.js';
-import tokensCss from '../dist/tokens.css?raw';
+import { declared, shortValue } from '../../../.storybook/tokens-css';
 
 const PREFIX = '--ingrid-';
 
@@ -19,27 +18,6 @@ const allTokens: Token[] = Object.entries(tokens).map(([path, ref]) => {
     name: parts[parts.length - 1],
   };
 });
-
-// What each variable is declared as in tokens.css, per mode, e.g. "var(--ingrid-color-white)".
-// The OS-preference @media block is skipped: it only repeats the dark values.
-const declared = (() => {
-  const light = new Map<string, string>();
-  const dark = new Map<string, string>();
-  const css = tokensCss
-    .replace(/\/\*[\s\S]*?\*\//g, '')
-    .replace(/@media[^{]*\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}/g, '');
-  for (const [, selector, body] of css.matchAll(/([^{}]+)\{([^{}]*)\}/g)) {
-    const target = selector.includes('data-theme="dark"') ? dark : light;
-    for (const [, name, value] of body.matchAll(/(--ingrid-[\w-]+)\s*:\s*([^;]+);/g)) {
-      target.set(name, value.trim());
-    }
-  }
-  return { light, dark };
-})();
-
-/** "var(--ingrid-color-white)" -> "color-white"; anything else is shown as written. */
-const shortValue = (value?: string) =>
-  value?.replace(/var\(--ingrid-([\w-]+)\)/g, '$1') ?? '';
 
 const text = {
   default: 'var(--ingrid-color-surface-on-surface-default)',
