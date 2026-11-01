@@ -1,6 +1,5 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { withTokenInspector } from '../../../../.storybook/TokenInspector';
 import { Button, type ButtonAppearance, type ButtonSize, type ButtonVariant } from './Button';
 
 const Plus = () => (
@@ -18,7 +17,6 @@ type ButtonStoryArgs = React.ComponentProps<typeof Button> & {
 const meta = {
   title: 'Inputs/Button',
   component: Button,
-  decorators: [withTokenInspector('.ingrid-button')],
   args: {
     children: 'Button',
     appearance: 'filled',
@@ -46,6 +44,8 @@ const meta = {
     trailingIcon: { table: { disable: true } },
   },
   parameters: {
+    // Tokens tab next to Controls: which Ingrid token is behind each property of the button.
+    tokenInspector: { selector: '.ingrid-button' },
     controls: {
       include: ['Label', 'Type', 'Color', 'Size', 'Leading icon', 'Trailing icon', 'Disabled'],
     },
