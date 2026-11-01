@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Preview } from '@storybook/react';
+import { withTokenInspector } from './token-inspector/decorator';
 import '../packages/tokens/dist/tokens.css';
 import '../packages/tokens/dist/text-styles.css';
 
@@ -12,6 +13,8 @@ const preview: Preview = {
   },
   initialGlobals: { theme: 'light' },
   decorators: [
+    // Feeds the Tokens tab on stories that set parameters.tokenInspector (inside the theme wrapper).
+    withTokenInspector,
     (Story, { globals }) => (
       <div
         data-theme={globals.theme}
