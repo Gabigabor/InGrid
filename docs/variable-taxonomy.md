@@ -21,7 +21,7 @@ Ingrid has 6 variable collections and 15 text styles, all in the Foundation Figm
 | Opacity | 2 · Semantic | Value | `opacity` | 4 | Layer opacity |
 | Sizes | 2 · Semantic | Value | `border`, `border-radius`, `spacing`, `dimension`, `focus-ring` | 34 | Stroke width, corner radius, gap, width/height |
 | Typography | 2 · Semantic | Value | `display`, `headline`, `title`, `body`, `label` | 75 | Font family, size, line height, weight, letter spacing |
-| Inputs | 3 · Category | Value | `primary`, `inverse`, `neutral`, `state`, `disabled`, `small`, `medium`, `large` | 46 | Per token |
+| Inputs | 3 · Category | Value | `color`, `size` | 46 | Per token |
 
 Text styles are tier 4: 15 composite styles (`Display/Large` … `Label/Small`) whose five properties are bound to the Typography collection.
 
@@ -149,34 +149,36 @@ Values are font size / line height in px. Only the Material 3 structure is used;
 
 Inputs holds tokens shared by every input-type component: buttons, icon buttons, split and toggle buttons, text fields, selects, checkboxes and toggles. Its values alias semantic tokens, never primitives.
 
+The collection has two top-level groups, by variable type: `color/` holds every colour variable (34) and `size/` every number variable (12). New Inputs variables go into the group that matches their type.
+
 | Group | Tokens | Aliases |
 | --- | --- | --- |
-| `primary/filled` | background, label | `primary/default`, `primary/on-primary` |
-| `primary/outlined` | border, label | `primary/default`, `surface/on-surface/brand` |
-| `primary/text` | label | `surface/on-surface/brand` |
-| `neutral/filled` | background, label | `surface/inverse`, `surface/on-surface/inverse` |
-| `neutral/outlined` | border, label | `surface/inverse`, `surface/on-surface/default` |
-| `neutral/text` | label | `surface/on-surface/default` |
-| `destructive/filled` | background, label | `semantic/error/default`, `semantic/error/on-error` |
-| `destructive/outlined` | border, label | `semantic/error/default`, `semantic/error/darker` |
-| `destructive/text` | label | `semantic/error/darker` |
-| `inverse/filled` | background, label | `surface/default`, `surface/on-surface/default` |
-| `inverse/outlined` | border, label | `surface/on-surface/inverse` (both) |
-| `inverse/text` | label | `surface/on-surface/inverse` |
-| `state` | hover, focus, pressed | `state/*` |
-| `state/inverse` | hover, focus, pressed | `state/inverse/*` (inputs on dark backgrounds: filled neutral, outlined and text inverse) |
-| `disabled` | background, border, label | `state/disabled`, `border/disabled`, `surface/on-surface/disabled` |
-| `inverse/disabled` | background, border, label | `state/inverse/disabled` |
-| (root) | border-radius, border-width | `border-radius/subtle`, `border/default` |
-| `small`, `medium`, `large` | height, padding-x, gap, icon-size | `dimension/*` and `spacing/*` (24/32/44 high) |
+| `color/primary/filled` | background, label | `primary/default`, `primary/on-primary` |
+| `color/primary/outlined` | border, label | `primary/default`, `surface/on-surface/brand` |
+| `color/primary/text` | label | `surface/on-surface/brand` |
+| `color/neutral/filled` | background, label | `surface/inverse`, `surface/on-surface/inverse` |
+| `color/neutral/outlined` | border, label | `surface/inverse`, `surface/on-surface/default` |
+| `color/neutral/text` | label | `surface/on-surface/default` |
+| `color/destructive/filled` | background, label | `semantic/error/default`, `semantic/error/on-error` |
+| `color/destructive/outlined` | border, label | `semantic/error/default`, `semantic/error/darker` |
+| `color/destructive/text` | label | `semantic/error/darker` |
+| `color/inverse/filled` | background, label | `surface/default`, `surface/on-surface/default` |
+| `color/inverse/outlined` | border, label | `surface/on-surface/inverse` (both) |
+| `color/inverse/text` | label | `surface/on-surface/inverse` |
+| `color/state` | hover, focus, pressed | `state/*` |
+| `color/state/inverse` | hover, focus, pressed | `state/inverse/*` (inputs on dark backgrounds: filled neutral, outlined and text inverse) |
+| `color/disabled` | background, border, label | `state/disabled`, `border/disabled`, `surface/on-surface/disabled` |
+| `color/inverse/disabled` | background, border, label | `state/inverse/disabled` |
+| `size` | border-radius, border-width | `border-radius/subtle`, `border/default` |
+| `size/small`, `size/medium`, `size/large` | height, padding-x, gap, icon-size | `dimension/*` and `spacing/*` (24/32/44 high) |
 
-Colour tokens follow `<variant>/<appearance>/<part>`: variant is the colour (primary, neutral, destructive, inverse), appearance is the emphasis (filled, outlined, text), part is what it colours (background, border, label).
+Colour tokens follow `color/<variant>/<appearance>/<part>`: variant is the colour (primary, neutral, destructive, inverse), appearance is the emphasis (filled, outlined, text), part is what it colours (background, border, label).
 
 **Inverse inputs are only for dark backgrounds** (`surface/inverse`, which is light in Dark mode). Their colours, state overlays and disabled colours are all mirrored for that background. On normal surfaces, use Primary or Neutral.
 
 Rules:
 
-- **No component-level tokens.** Names describe the role inside any input (`filled/background`, `medium/height`), never a single component (`button/…`).
+- **No component-level tokens.** Names describe the role inside any input (`color/primary/filled/background`, `size/medium/height`), never a single component (`button/…`).
 - **New categories get new collections.** When another family of components needs shared tokens (for example navigation or containers), create a collection for that category rather than adding to Inputs.
 - **Label and icon are separate roles.** The `…/label` tokens colour label text; icons use them for now. If icons need their own shade, add `…/icon` tokens next to them.
 - **Focus ring is not here.** It's the same for every component, so it lives at the semantic level: `focus-ring` in Colors and `focus-ring/width` in Sizes. Components draw it on its own absolutely positioned layer, focus-ring/offset (2px) outside their edge, so the ring never replaces the component's own border.
@@ -201,7 +203,7 @@ Every variable has a WEB code syntax in the form `var(--ingrid-<name>)`, where `
 | Primitives | `--ingrid-<name>` | `color/blue/500` → `var(--ingrid-color-blue-500)` |
 | Colors | `--ingrid-color-<name>`, `semantic/` dropped | `semantic/error/default` → `var(--ingrid-color-error-default)` |
 | Opacity, Sizes, Typography | `--ingrid-<name>` | `spacing/md` → `var(--ingrid-spacing-md)` |
-| Inputs | `--ingrid-input-<name>` | `medium/height` → `var(--ingrid-input-medium-height)` |
+| Inputs | `--ingrid-input-<name>`, `color/` and `size/` dropped | `size/medium/height` → `var(--ingrid-input-medium-height)` |
 
 Every CSS name must be unique across all collections.
 

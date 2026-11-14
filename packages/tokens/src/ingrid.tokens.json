@@ -5332,6 +5332,269 @@
         }
       }
     },
+    "typography": {
+      "font-family": {
+        "sans": {
+          "$type": "string",
+          "$value": "Source Sans Pro",
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-font-family-sans)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": "Source Sans Pro"
+              }
+            }
+          }
+        }
+      },
+      "font-weight": {
+        "extralight": {
+          "$type": "number",
+          "$value": 200,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-font-weight-extralight)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": 200
+              }
+            }
+          }
+        },
+        "light": {
+          "$type": "number",
+          "$value": 300,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-font-weight-light)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": 300
+              }
+            }
+          }
+        },
+        "regular": {
+          "$type": "number",
+          "$value": 400,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-font-weight-regular)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": 400
+              }
+            }
+          }
+        },
+        "medium": {
+          "$type": "number",
+          "$value": 500,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-font-weight-medium)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": 500
+              }
+            }
+          }
+        },
+        "semibold": {
+          "$type": "number",
+          "$value": 600,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-font-weight-semibold)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": 600
+              }
+            }
+          }
+        },
+        "bold": {
+          "$type": "number",
+          "$value": 700,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-font-weight-bold)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": 700
+              }
+            }
+          }
+        },
+        "extrabold": {
+          "$type": "number",
+          "$value": 800,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-font-weight-extrabold)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": 800
+              }
+            }
+          }
+        },
+        "black": {
+          "$type": "number",
+          "$value": 900,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-font-weight-black)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": 900
+              }
+            }
+          }
+        }
+      },
+      "letter-spacing": {
+        "300": {
+          "$type": "number",
+          "$value": -0.8,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-letter-spacing-300)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": -0.8
+              }
+            }
+          }
+        },
+        "400": {
+          "$type": "number",
+          "$value": -0.4,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-letter-spacing-400)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": -0.4
+              }
+            }
+          }
+        },
+        "500": {
+          "$type": "number",
+          "$value": 0,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-letter-spacing-500)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": 0
+              }
+            }
+          }
+        },
+        "600": {
+          "$type": "number",
+          "$value": 0.4,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-letter-spacing-600)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": 0.4
+              }
+            }
+          }
+        },
+        "700": {
+          "$type": "number",
+          "$value": 0.8,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-letter-spacing-700)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": 0.8
+              }
+            }
+          }
+        },
+        "800": {
+          "$type": "number",
+          "$value": 1.6,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-letter-spacing-800)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": 1.6
+              }
+            }
+          }
+        }
+      }
+    },
     "size": {
       "0": {
         "$type": "number",
@@ -6043,269 +6306,6 @@
             "scopes": [],
             "modes": {
               "Value": 9999
-            }
-          }
-        }
-      }
-    },
-    "typography": {
-      "font-family": {
-        "sans": {
-          "$type": "string",
-          "$value": "Source Sans Pro",
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-font-family-sans)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": "Source Sans Pro"
-              }
-            }
-          }
-        }
-      },
-      "font-weight": {
-        "extralight": {
-          "$type": "number",
-          "$value": 200,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-font-weight-extralight)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": 200
-              }
-            }
-          }
-        },
-        "light": {
-          "$type": "number",
-          "$value": 300,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-font-weight-light)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": 300
-              }
-            }
-          }
-        },
-        "regular": {
-          "$type": "number",
-          "$value": 400,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-font-weight-regular)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": 400
-              }
-            }
-          }
-        },
-        "medium": {
-          "$type": "number",
-          "$value": 500,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-font-weight-medium)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": 500
-              }
-            }
-          }
-        },
-        "semibold": {
-          "$type": "number",
-          "$value": 600,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-font-weight-semibold)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": 600
-              }
-            }
-          }
-        },
-        "bold": {
-          "$type": "number",
-          "$value": 700,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-font-weight-bold)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": 700
-              }
-            }
-          }
-        },
-        "extrabold": {
-          "$type": "number",
-          "$value": 800,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-font-weight-extrabold)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": 800
-              }
-            }
-          }
-        },
-        "black": {
-          "$type": "number",
-          "$value": 900,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-font-weight-black)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": 900
-              }
-            }
-          }
-        }
-      },
-      "letter-spacing": {
-        "300": {
-          "$type": "number",
-          "$value": -0.8,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-letter-spacing-300)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": -0.8
-              }
-            }
-          }
-        },
-        "400": {
-          "$type": "number",
-          "$value": -0.4,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-letter-spacing-400)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": -0.4
-              }
-            }
-          }
-        },
-        "500": {
-          "$type": "number",
-          "$value": 0,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-letter-spacing-500)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": 0
-              }
-            }
-          }
-        },
-        "600": {
-          "$type": "number",
-          "$value": 0.4,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-letter-spacing-600)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": 0.4
-              }
-            }
-          }
-        },
-        "700": {
-          "$type": "number",
-          "$value": 0.8,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-letter-spacing-700)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": 0.8
-              }
-            }
-          }
-        },
-        "800": {
-          "$type": "number",
-          "$value": 1.6,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-letter-spacing-800)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": 1.6
-              }
             }
           }
         }
@@ -10756,668 +10756,232 @@
     }
   },
   "inputs": {
-    "primary": {
-      "filled": {
-        "background": {
-          "$type": "color",
-          "$value": "{colors.primary.default}",
-          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Background of filled primary inputs.",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Inputs",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-input-primary-filled-background)"
-              },
-              "scopes": [
-                "FRAME_FILL"
-              ],
-              "modes": {
-                "Value": "{colors.primary.default}"
+    "color": {
+      "primary": {
+        "filled": {
+          "background": {
+            "$type": "color",
+            "$value": "{colors.primary.default}",
+            "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Background of filled primary inputs.",
+            "$extensions": {
+              "com.figma": {
+                "collection": "Inputs",
+                "codeSyntax": {
+                  "WEB": "var(--ingrid-input-primary-filled-background)"
+                },
+                "scopes": [
+                  "FRAME_FILL"
+                ],
+                "modes": {
+                  "Value": "{colors.primary.default}"
+                }
+              }
+            }
+          },
+          "label": {
+            "$type": "color",
+            "$value": "{colors.primary.on-primary}",
+            "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour (icons use it too for now) of filled primary inputs. Only on primary/filled/background.",
+            "$extensions": {
+              "com.figma": {
+                "collection": "Inputs",
+                "codeSyntax": {
+                  "WEB": "var(--ingrid-input-primary-filled-label)"
+                },
+                "scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "modes": {
+                  "Value": "{colors.primary.on-primary}"
+                }
               }
             }
           }
         },
-        "label": {
-          "$type": "color",
-          "$value": "{colors.primary.on-primary}",
-          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour (icons use it too for now) of filled primary inputs. Only on primary/filled/background.",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Inputs",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-input-primary-filled-label)"
-              },
-              "scopes": [
-                "SHAPE_FILL",
-                "TEXT_FILL"
-              ],
-              "modes": {
-                "Value": "{colors.primary.on-primary}"
+        "outlined": {
+          "border": {
+            "$type": "color",
+            "$value": "{colors.primary.default}",
+            "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Border colour of outlined primary inputs.",
+            "$extensions": {
+              "com.figma": {
+                "collection": "Inputs",
+                "codeSyntax": {
+                  "WEB": "var(--ingrid-input-primary-outlined-border)"
+                },
+                "scopes": [
+                  "STROKE_COLOR"
+                ],
+                "modes": {
+                  "Value": "{colors.primary.default}"
+                }
               }
             }
-          }
-        }
-      },
-      "outlined": {
-        "border": {
-          "$type": "color",
-          "$value": "{colors.primary.default}",
-          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Border colour of outlined primary inputs.",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Inputs",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-input-primary-outlined-border)"
-              },
-              "scopes": [
-                "STROKE_COLOR"
-              ],
-              "modes": {
-                "Value": "{colors.primary.default}"
+          },
+          "label": {
+            "$type": "color",
+            "$value": "{colors.surface.on-surface.brand}",
+            "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour (icons use it too for now) of outlined primary inputs, on surface backgrounds.",
+            "$extensions": {
+              "com.figma": {
+                "collection": "Inputs",
+                "codeSyntax": {
+                  "WEB": "var(--ingrid-input-primary-outlined-label)"
+                },
+                "scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "modes": {
+                  "Value": "{colors.surface.on-surface.brand}"
+                }
               }
             }
           }
         },
-        "label": {
-          "$type": "color",
-          "$value": "{colors.surface.on-surface.brand}",
-          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour (icons use it too for now) of outlined primary inputs, on surface backgrounds.",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Inputs",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-input-primary-outlined-label)"
-              },
-              "scopes": [
-                "SHAPE_FILL",
-                "TEXT_FILL"
-              ],
-              "modes": {
-                "Value": "{colors.surface.on-surface.brand}"
+        "text": {
+          "label": {
+            "$type": "color",
+            "$value": "{colors.surface.on-surface.brand}",
+            "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour (icons use it too for now) of text-only primary inputs, on surface backgrounds.",
+            "$extensions": {
+              "com.figma": {
+                "collection": "Inputs",
+                "codeSyntax": {
+                  "WEB": "var(--ingrid-input-primary-text-label)"
+                },
+                "scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "modes": {
+                  "Value": "{colors.surface.on-surface.brand}"
+                }
               }
             }
           }
         }
       },
-      "text": {
-        "label": {
-          "$type": "color",
-          "$value": "{colors.surface.on-surface.brand}",
-          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour (icons use it too for now) of text-only primary inputs, on surface backgrounds.",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Inputs",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-input-primary-text-label)"
-              },
-              "scopes": [
-                "SHAPE_FILL",
-                "TEXT_FILL"
-              ],
-              "modes": {
-                "Value": "{colors.surface.on-surface.brand}"
-              }
-            }
-          }
-        }
-      }
-    },
-    "state": {
-      "hover": {
-        "$type": "color",
-        "$value": "{colors.state.hover}",
-        "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Fill of the state layer while the input is hovered.",
-        "$extensions": {
-          "com.figma": {
-            "collection": "Inputs",
-            "codeSyntax": {
-              "WEB": "var(--ingrid-input-state-hover)"
-            },
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "modes": {
-              "Value": "{colors.state.hover}"
-            }
-          }
-        }
-      },
-      "focus": {
-        "$type": "color",
-        "$value": "{colors.state.focus}",
-        "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Fill of the state layer while the input has keyboard focus.",
-        "$extensions": {
-          "com.figma": {
-            "collection": "Inputs",
-            "codeSyntax": {
-              "WEB": "var(--ingrid-input-state-focus)"
-            },
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "modes": {
-              "Value": "{colors.state.focus}"
-            }
-          }
-        }
-      },
-      "pressed": {
-        "$type": "color",
-        "$value": "{colors.state.pressed}",
-        "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Fill of the state layer while the input is pressed.",
-        "$extensions": {
-          "com.figma": {
-            "collection": "Inputs",
-            "codeSyntax": {
-              "WEB": "var(--ingrid-input-state-pressed)"
-            },
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "modes": {
-              "Value": "{colors.state.pressed}"
-            }
-          }
-        }
-      },
-      "inverse": {
+      "state": {
         "hover": {
           "$type": "color",
-          "$value": "{colors.state.inverse.hover}",
-          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). State-layer fill of inputs on dark backgrounds (filled neutral, outlined and text inverse) while hovered.",
+          "$value": "{colors.state.hover}",
+          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Fill of the state layer while the input is hovered.",
           "$extensions": {
             "com.figma": {
               "collection": "Inputs",
               "codeSyntax": {
-                "WEB": "var(--ingrid-input-state-inverse-hover)"
+                "WEB": "var(--ingrid-input-state-hover)"
               },
               "scopes": [
                 "FRAME_FILL",
                 "SHAPE_FILL"
               ],
               "modes": {
-                "Value": "{colors.state.inverse.hover}"
+                "Value": "{colors.state.hover}"
               }
             }
           }
         },
         "focus": {
           "$type": "color",
-          "$value": "{colors.state.inverse.focus}",
-          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). State-layer fill of inputs on dark backgrounds (filled neutral, outlined and text inverse) while focused.",
+          "$value": "{colors.state.focus}",
+          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Fill of the state layer while the input has keyboard focus.",
           "$extensions": {
             "com.figma": {
               "collection": "Inputs",
               "codeSyntax": {
-                "WEB": "var(--ingrid-input-state-inverse-focus)"
+                "WEB": "var(--ingrid-input-state-focus)"
               },
               "scopes": [
                 "FRAME_FILL",
                 "SHAPE_FILL"
               ],
               "modes": {
-                "Value": "{colors.state.inverse.focus}"
+                "Value": "{colors.state.focus}"
               }
             }
           }
         },
         "pressed": {
           "$type": "color",
-          "$value": "{colors.state.inverse.pressed}",
-          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). State-layer fill of inputs on dark backgrounds (filled neutral, outlined and text inverse) while pressed.",
+          "$value": "{colors.state.pressed}",
+          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Fill of the state layer while the input is pressed.",
           "$extensions": {
             "com.figma": {
               "collection": "Inputs",
               "codeSyntax": {
-                "WEB": "var(--ingrid-input-state-inverse-pressed)"
+                "WEB": "var(--ingrid-input-state-pressed)"
               },
               "scopes": [
                 "FRAME_FILL",
                 "SHAPE_FILL"
               ],
               "modes": {
-                "Value": "{colors.state.inverse.pressed}"
-              }
-            }
-          }
-        }
-      }
-    },
-    "disabled": {
-      "background": {
-        "$type": "color",
-        "$value": "{colors.state.disabled}",
-        "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Background of disabled filled inputs.",
-        "$extensions": {
-          "com.figma": {
-            "collection": "Inputs",
-            "codeSyntax": {
-              "WEB": "var(--ingrid-input-disabled-background)"
-            },
-            "scopes": [
-              "FRAME_FILL"
-            ],
-            "modes": {
-              "Value": "{colors.state.disabled}"
-            }
-          }
-        }
-      },
-      "border": {
-        "$type": "color",
-        "$value": "{colors.border.disabled}",
-        "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Border of disabled outlined inputs.",
-        "$extensions": {
-          "com.figma": {
-            "collection": "Inputs",
-            "codeSyntax": {
-              "WEB": "var(--ingrid-input-disabled-border)"
-            },
-            "scopes": [
-              "STROKE_COLOR"
-            ],
-            "modes": {
-              "Value": "{colors.border.disabled}"
-            }
-          }
-        }
-      },
-      "label": {
-        "$type": "color",
-        "$value": "{colors.surface.on-surface.disabled}",
-        "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour (icons use it too for now) of disabled inputs (all styles).",
-        "$extensions": {
-          "com.figma": {
-            "collection": "Inputs",
-            "codeSyntax": {
-              "WEB": "var(--ingrid-input-disabled-label)"
-            },
-            "scopes": [
-              "SHAPE_FILL",
-              "TEXT_FILL"
-            ],
-            "modes": {
-              "Value": "{colors.surface.on-surface.disabled}"
-            }
-          }
-        }
-      }
-    },
-    "border-radius": {
-      "$type": "number",
-      "$value": "{sizes.border-radius.subtle}",
-      "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Corner radius of inputs (all sizes and styles).",
-      "$extensions": {
-        "com.figma": {
-          "collection": "Inputs",
-          "codeSyntax": {
-            "WEB": "var(--ingrid-input-border-radius)"
-          },
-          "scopes": [
-            "CORNER_RADIUS"
-          ],
-          "modes": {
-            "Value": "{sizes.border-radius.subtle}"
-          }
-        }
-      }
-    },
-    "border-width": {
-      "$type": "number",
-      "$value": "{sizes.border.default}",
-      "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Border width of outlined inputs.",
-      "$extensions": {
-        "com.figma": {
-          "collection": "Inputs",
-          "codeSyntax": {
-            "WEB": "var(--ingrid-input-border-width)"
-          },
-          "scopes": [
-            "STROKE_FLOAT"
-          ],
-          "modes": {
-            "Value": "{sizes.border.default}"
-          }
-        }
-      }
-    },
-    "small": {
-      "height": {
-        "$type": "number",
-        "$value": "{sizes.dimension.md}",
-        "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Height (24px) of small inputs; square inputs such as icon buttons use it as width too.",
-        "$extensions": {
-          "com.figma": {
-            "collection": "Inputs",
-            "codeSyntax": {
-              "WEB": "var(--ingrid-input-small-height)"
-            },
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "modes": {
-              "Value": "{sizes.dimension.md}"
-            }
-          }
-        }
-      },
-      "padding-x": {
-        "$type": "number",
-        "$value": "{sizes.spacing.xs}",
-        "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Left and right padding of small inputs.",
-        "$extensions": {
-          "com.figma": {
-            "collection": "Inputs",
-            "codeSyntax": {
-              "WEB": "var(--ingrid-input-small-padding-x)"
-            },
-            "scopes": [
-              "GAP"
-            ],
-            "modes": {
-              "Value": "{sizes.spacing.xs}"
-            }
-          }
-        }
-      },
-      "gap": {
-        "$type": "number",
-        "$value": "{sizes.spacing.2xs}",
-        "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Gap between icon and label in small inputs.",
-        "$extensions": {
-          "com.figma": {
-            "collection": "Inputs",
-            "codeSyntax": {
-              "WEB": "var(--ingrid-input-small-gap)"
-            },
-            "scopes": [
-              "GAP"
-            ],
-            "modes": {
-              "Value": "{sizes.spacing.2xs}"
-            }
-          }
-        }
-      },
-      "icon-size": {
-        "$type": "number",
-        "$value": "{sizes.dimension.xs}",
-        "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Icon size in small inputs.",
-        "$extensions": {
-          "com.figma": {
-            "collection": "Inputs",
-            "codeSyntax": {
-              "WEB": "var(--ingrid-input-small-icon-size)"
-            },
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "modes": {
-              "Value": "{sizes.dimension.xs}"
-            }
-          }
-        }
-      }
-    },
-    "medium": {
-      "height": {
-        "$type": "number",
-        "$value": "{sizes.dimension.lg}",
-        "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Height (32px) of medium inputs; square inputs such as icon buttons use it as width too.",
-        "$extensions": {
-          "com.figma": {
-            "collection": "Inputs",
-            "codeSyntax": {
-              "WEB": "var(--ingrid-input-medium-height)"
-            },
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "modes": {
-              "Value": "{sizes.dimension.lg}"
-            }
-          }
-        }
-      },
-      "padding-x": {
-        "$type": "number",
-        "$value": "{sizes.spacing.sm}",
-        "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Left and right padding of medium inputs.",
-        "$extensions": {
-          "com.figma": {
-            "collection": "Inputs",
-            "codeSyntax": {
-              "WEB": "var(--ingrid-input-medium-padding-x)"
-            },
-            "scopes": [
-              "GAP"
-            ],
-            "modes": {
-              "Value": "{sizes.spacing.sm}"
-            }
-          }
-        }
-      },
-      "gap": {
-        "$type": "number",
-        "$value": "{sizes.spacing.xs}",
-        "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Gap between icon and label in medium inputs.",
-        "$extensions": {
-          "com.figma": {
-            "collection": "Inputs",
-            "codeSyntax": {
-              "WEB": "var(--ingrid-input-medium-gap)"
-            },
-            "scopes": [
-              "GAP"
-            ],
-            "modes": {
-              "Value": "{sizes.spacing.xs}"
-            }
-          }
-        }
-      },
-      "icon-size": {
-        "$type": "number",
-        "$value": "{sizes.dimension.sm}",
-        "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Icon size in medium inputs.",
-        "$extensions": {
-          "com.figma": {
-            "collection": "Inputs",
-            "codeSyntax": {
-              "WEB": "var(--ingrid-input-medium-icon-size)"
-            },
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "modes": {
-              "Value": "{sizes.dimension.sm}"
-            }
-          }
-        }
-      }
-    },
-    "large": {
-      "height": {
-        "$type": "number",
-        "$value": "{sizes.dimension.3xl}",
-        "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Height (44px) of large inputs; square inputs such as icon buttons use it as width too.",
-        "$extensions": {
-          "com.figma": {
-            "collection": "Inputs",
-            "codeSyntax": {
-              "WEB": "var(--ingrid-input-large-height)"
-            },
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "modes": {
-              "Value": "{sizes.dimension.3xl}"
-            }
-          }
-        }
-      },
-      "padding-x": {
-        "$type": "number",
-        "$value": "{sizes.spacing.md}",
-        "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Left and right padding of large inputs.",
-        "$extensions": {
-          "com.figma": {
-            "collection": "Inputs",
-            "codeSyntax": {
-              "WEB": "var(--ingrid-input-large-padding-x)"
-            },
-            "scopes": [
-              "GAP"
-            ],
-            "modes": {
-              "Value": "{sizes.spacing.md}"
-            }
-          }
-        }
-      },
-      "gap": {
-        "$type": "number",
-        "$value": "{sizes.spacing.xs}",
-        "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Gap between icon and label in large inputs.",
-        "$extensions": {
-          "com.figma": {
-            "collection": "Inputs",
-            "codeSyntax": {
-              "WEB": "var(--ingrid-input-large-gap)"
-            },
-            "scopes": [
-              "GAP"
-            ],
-            "modes": {
-              "Value": "{sizes.spacing.xs}"
-            }
-          }
-        }
-      },
-      "icon-size": {
-        "$type": "number",
-        "$value": "{sizes.dimension.md}",
-        "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Icon size in large inputs.",
-        "$extensions": {
-          "com.figma": {
-            "collection": "Inputs",
-            "codeSyntax": {
-              "WEB": "var(--ingrid-input-large-icon-size)"
-            },
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "modes": {
-              "Value": "{sizes.dimension.md}"
-            }
-          }
-        }
-      }
-    },
-    "inverse": {
-      "filled": {
-        "background": {
-          "$type": "color",
-          "$value": "{colors.surface.default}",
-          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Background of filled inverse inputs. Only on surface/inverse (dark backgrounds in Light mode).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Inputs",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-input-inverse-filled-background)"
-              },
-              "scopes": [
-                "FRAME_FILL"
-              ],
-              "modes": {
-                "Value": "{colors.surface.default}"
+                "Value": "{colors.state.pressed}"
               }
             }
           }
         },
-        "label": {
-          "$type": "color",
-          "$value": "{colors.surface.on-surface.default}",
-          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour (icons use it too for now) of filled inverse inputs. Only on inverse/filled/background.",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Inputs",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-input-inverse-filled-label)"
-              },
-              "scopes": [
-                "SHAPE_FILL",
-                "TEXT_FILL"
-              ],
-              "modes": {
-                "Value": "{colors.surface.on-surface.default}"
+        "inverse": {
+          "hover": {
+            "$type": "color",
+            "$value": "{colors.state.inverse.hover}",
+            "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). State-layer fill of inputs on dark backgrounds (filled neutral, outlined and text inverse) while hovered.",
+            "$extensions": {
+              "com.figma": {
+                "collection": "Inputs",
+                "codeSyntax": {
+                  "WEB": "var(--ingrid-input-state-inverse-hover)"
+                },
+                "scopes": [
+                  "FRAME_FILL",
+                  "SHAPE_FILL"
+                ],
+                "modes": {
+                  "Value": "{colors.state.inverse.hover}"
+                }
               }
             }
-          }
-        }
-      },
-      "outlined": {
-        "border": {
-          "$type": "color",
-          "$value": "{colors.surface.on-surface.inverse}",
-          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Border colour of outlined inverse inputs. Only on surface/inverse.",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Inputs",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-input-inverse-outlined-border)"
-              },
-              "scopes": [
-                "STROKE_COLOR"
-              ],
-              "modes": {
-                "Value": "{colors.surface.on-surface.inverse}"
+          },
+          "focus": {
+            "$type": "color",
+            "$value": "{colors.state.inverse.focus}",
+            "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). State-layer fill of inputs on dark backgrounds (filled neutral, outlined and text inverse) while focused.",
+            "$extensions": {
+              "com.figma": {
+                "collection": "Inputs",
+                "codeSyntax": {
+                  "WEB": "var(--ingrid-input-state-inverse-focus)"
+                },
+                "scopes": [
+                  "FRAME_FILL",
+                  "SHAPE_FILL"
+                ],
+                "modes": {
+                  "Value": "{colors.state.inverse.focus}"
+                }
               }
             }
-          }
-        },
-        "label": {
-          "$type": "color",
-          "$value": "{colors.surface.on-surface.inverse}",
-          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour (icons use it too for now) of outlined inverse inputs. Only on surface/inverse.",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Inputs",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-input-inverse-outlined-label)"
-              },
-              "scopes": [
-                "SHAPE_FILL",
-                "TEXT_FILL"
-              ],
-              "modes": {
-                "Value": "{colors.surface.on-surface.inverse}"
-              }
-            }
-          }
-        }
-      },
-      "text": {
-        "label": {
-          "$type": "color",
-          "$value": "{colors.surface.on-surface.inverse}",
-          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour (icons use it too for now) of text-only inverse inputs. Only on surface/inverse.",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Inputs",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-input-inverse-text-label)"
-              },
-              "scopes": [
-                "SHAPE_FILL",
-                "TEXT_FILL"
-              ],
-              "modes": {
-                "Value": "{colors.surface.on-surface.inverse}"
+          },
+          "pressed": {
+            "$type": "color",
+            "$value": "{colors.state.inverse.pressed}",
+            "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). State-layer fill of inputs on dark backgrounds (filled neutral, outlined and text inverse) while pressed.",
+            "$extensions": {
+              "com.figma": {
+                "collection": "Inputs",
+                "codeSyntax": {
+                  "WEB": "var(--ingrid-input-state-inverse-pressed)"
+                },
+                "scopes": [
+                  "FRAME_FILL",
+                  "SHAPE_FILL"
+                ],
+                "modes": {
+                  "Value": "{colors.state.inverse.pressed}"
+                }
               }
             }
           }
@@ -11426,270 +10990,710 @@
       "disabled": {
         "background": {
           "$type": "color",
-          "$value": "{colors.state.inverse.disabled}",
-          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Background of disabled filled inverse inputs, on surface/inverse.",
+          "$value": "{colors.state.disabled}",
+          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Background of disabled filled inputs.",
           "$extensions": {
             "com.figma": {
               "collection": "Inputs",
               "codeSyntax": {
-                "WEB": "var(--ingrid-input-inverse-disabled-background)"
+                "WEB": "var(--ingrid-input-disabled-background)"
               },
               "scopes": [
                 "FRAME_FILL"
               ],
               "modes": {
-                "Value": "{colors.state.inverse.disabled}"
+                "Value": "{colors.state.disabled}"
               }
             }
           }
         },
         "border": {
           "$type": "color",
-          "$value": "{colors.state.inverse.disabled}",
-          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Border of disabled outlined inverse inputs, on surface/inverse.",
+          "$value": "{colors.border.disabled}",
+          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Border of disabled outlined inputs.",
           "$extensions": {
             "com.figma": {
               "collection": "Inputs",
               "codeSyntax": {
-                "WEB": "var(--ingrid-input-inverse-disabled-border)"
+                "WEB": "var(--ingrid-input-disabled-border)"
               },
               "scopes": [
                 "STROKE_COLOR"
               ],
               "modes": {
-                "Value": "{colors.state.inverse.disabled}"
+                "Value": "{colors.border.disabled}"
               }
             }
           }
         },
         "label": {
           "$type": "color",
-          "$value": "{colors.state.inverse.disabled}",
-          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour of disabled inverse inputs, on surface/inverse.",
+          "$value": "{colors.surface.on-surface.disabled}",
+          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour (icons use it too for now) of disabled inputs (all styles).",
           "$extensions": {
             "com.figma": {
               "collection": "Inputs",
               "codeSyntax": {
-                "WEB": "var(--ingrid-input-inverse-disabled-label)"
+                "WEB": "var(--ingrid-input-disabled-label)"
               },
               "scopes": [
                 "SHAPE_FILL",
                 "TEXT_FILL"
               ],
               "modes": {
-                "Value": "{colors.state.inverse.disabled}"
+                "Value": "{colors.surface.on-surface.disabled}"
+              }
+            }
+          }
+        }
+      },
+      "inverse": {
+        "filled": {
+          "background": {
+            "$type": "color",
+            "$value": "{colors.surface.default}",
+            "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Background of filled inverse inputs. Only on surface/inverse (dark backgrounds in Light mode).",
+            "$extensions": {
+              "com.figma": {
+                "collection": "Inputs",
+                "codeSyntax": {
+                  "WEB": "var(--ingrid-input-inverse-filled-background)"
+                },
+                "scopes": [
+                  "FRAME_FILL"
+                ],
+                "modes": {
+                  "Value": "{colors.surface.default}"
+                }
+              }
+            }
+          },
+          "label": {
+            "$type": "color",
+            "$value": "{colors.surface.on-surface.default}",
+            "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour (icons use it too for now) of filled inverse inputs. Only on inverse/filled/background.",
+            "$extensions": {
+              "com.figma": {
+                "collection": "Inputs",
+                "codeSyntax": {
+                  "WEB": "var(--ingrid-input-inverse-filled-label)"
+                },
+                "scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "modes": {
+                  "Value": "{colors.surface.on-surface.default}"
+                }
+              }
+            }
+          }
+        },
+        "outlined": {
+          "border": {
+            "$type": "color",
+            "$value": "{colors.surface.on-surface.inverse}",
+            "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Border colour of outlined inverse inputs. Only on surface/inverse.",
+            "$extensions": {
+              "com.figma": {
+                "collection": "Inputs",
+                "codeSyntax": {
+                  "WEB": "var(--ingrid-input-inverse-outlined-border)"
+                },
+                "scopes": [
+                  "STROKE_COLOR"
+                ],
+                "modes": {
+                  "Value": "{colors.surface.on-surface.inverse}"
+                }
+              }
+            }
+          },
+          "label": {
+            "$type": "color",
+            "$value": "{colors.surface.on-surface.inverse}",
+            "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour (icons use it too for now) of outlined inverse inputs. Only on surface/inverse.",
+            "$extensions": {
+              "com.figma": {
+                "collection": "Inputs",
+                "codeSyntax": {
+                  "WEB": "var(--ingrid-input-inverse-outlined-label)"
+                },
+                "scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "modes": {
+                  "Value": "{colors.surface.on-surface.inverse}"
+                }
+              }
+            }
+          }
+        },
+        "text": {
+          "label": {
+            "$type": "color",
+            "$value": "{colors.surface.on-surface.inverse}",
+            "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour (icons use it too for now) of text-only inverse inputs. Only on surface/inverse.",
+            "$extensions": {
+              "com.figma": {
+                "collection": "Inputs",
+                "codeSyntax": {
+                  "WEB": "var(--ingrid-input-inverse-text-label)"
+                },
+                "scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "modes": {
+                  "Value": "{colors.surface.on-surface.inverse}"
+                }
+              }
+            }
+          }
+        },
+        "disabled": {
+          "background": {
+            "$type": "color",
+            "$value": "{colors.state.inverse.disabled}",
+            "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Background of disabled filled inverse inputs, on surface/inverse.",
+            "$extensions": {
+              "com.figma": {
+                "collection": "Inputs",
+                "codeSyntax": {
+                  "WEB": "var(--ingrid-input-inverse-disabled-background)"
+                },
+                "scopes": [
+                  "FRAME_FILL"
+                ],
+                "modes": {
+                  "Value": "{colors.state.inverse.disabled}"
+                }
+              }
+            }
+          },
+          "border": {
+            "$type": "color",
+            "$value": "{colors.state.inverse.disabled}",
+            "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Border of disabled outlined inverse inputs, on surface/inverse.",
+            "$extensions": {
+              "com.figma": {
+                "collection": "Inputs",
+                "codeSyntax": {
+                  "WEB": "var(--ingrid-input-inverse-disabled-border)"
+                },
+                "scopes": [
+                  "STROKE_COLOR"
+                ],
+                "modes": {
+                  "Value": "{colors.state.inverse.disabled}"
+                }
+              }
+            }
+          },
+          "label": {
+            "$type": "color",
+            "$value": "{colors.state.inverse.disabled}",
+            "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour of disabled inverse inputs, on surface/inverse.",
+            "$extensions": {
+              "com.figma": {
+                "collection": "Inputs",
+                "codeSyntax": {
+                  "WEB": "var(--ingrid-input-inverse-disabled-label)"
+                },
+                "scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "modes": {
+                  "Value": "{colors.state.inverse.disabled}"
+                }
+              }
+            }
+          }
+        }
+      },
+      "neutral": {
+        "filled": {
+          "background": {
+            "$type": "color",
+            "$value": "{colors.surface.inverse}",
+            "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Background of filled neutral inputs (dark in Light mode). Use on surface backgrounds.",
+            "$extensions": {
+              "com.figma": {
+                "collection": "Inputs",
+                "codeSyntax": {
+                  "WEB": "var(--ingrid-input-neutral-filled-background)"
+                },
+                "scopes": [
+                  "FRAME_FILL"
+                ],
+                "modes": {
+                  "Value": "{colors.surface.inverse}"
+                }
+              }
+            }
+          },
+          "label": {
+            "$type": "color",
+            "$value": "{colors.surface.on-surface.inverse}",
+            "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour (icons use it too for now) of filled neutral inputs. Only on neutral/filled/background.",
+            "$extensions": {
+              "com.figma": {
+                "collection": "Inputs",
+                "codeSyntax": {
+                  "WEB": "var(--ingrid-input-neutral-filled-label)"
+                },
+                "scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "modes": {
+                  "Value": "{colors.surface.on-surface.inverse}"
+                }
+              }
+            }
+          }
+        },
+        "outlined": {
+          "border": {
+            "$type": "color",
+            "$value": "{colors.surface.inverse}",
+            "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Border colour of outlined neutral inputs, on surface backgrounds.",
+            "$extensions": {
+              "com.figma": {
+                "collection": "Inputs",
+                "codeSyntax": {
+                  "WEB": "var(--ingrid-input-neutral-outlined-border)"
+                },
+                "scopes": [
+                  "STROKE_COLOR"
+                ],
+                "modes": {
+                  "Value": "{colors.surface.inverse}"
+                }
+              }
+            }
+          },
+          "label": {
+            "$type": "color",
+            "$value": "{colors.surface.on-surface.default}",
+            "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour (icons use it too for now) of outlined neutral inputs, on surface backgrounds.",
+            "$extensions": {
+              "com.figma": {
+                "collection": "Inputs",
+                "codeSyntax": {
+                  "WEB": "var(--ingrid-input-neutral-outlined-label)"
+                },
+                "scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "modes": {
+                  "Value": "{colors.surface.on-surface.default}"
+                }
+              }
+            }
+          }
+        },
+        "text": {
+          "label": {
+            "$type": "color",
+            "$value": "{colors.surface.on-surface.default}",
+            "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour (icons use it too for now) of text-only neutral inputs, on surface backgrounds.",
+            "$extensions": {
+              "com.figma": {
+                "collection": "Inputs",
+                "codeSyntax": {
+                  "WEB": "var(--ingrid-input-neutral-text-label)"
+                },
+                "scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "modes": {
+                  "Value": "{colors.surface.on-surface.default}"
+                }
+              }
+            }
+          }
+        }
+      },
+      "destructive": {
+        "filled": {
+          "background": {
+            "$type": "color",
+            "$value": "{colors.semantic.error.default}",
+            "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Background of filled destructive inputs (actions that delete or can’t be undone).",
+            "$extensions": {
+              "com.figma": {
+                "collection": "Inputs",
+                "codeSyntax": {
+                  "WEB": "var(--ingrid-input-destructive-filled-background)"
+                },
+                "scopes": [
+                  "FRAME_FILL"
+                ],
+                "modes": {
+                  "Value": "{colors.semantic.error.default}"
+                }
+              }
+            }
+          },
+          "label": {
+            "$type": "color",
+            "$value": "{colors.semantic.error.on-error}",
+            "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour (icons use it too for now) of filled destructive inputs. Only on destructive/filled/background.",
+            "$extensions": {
+              "com.figma": {
+                "collection": "Inputs",
+                "codeSyntax": {
+                  "WEB": "var(--ingrid-input-destructive-filled-label)"
+                },
+                "scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "modes": {
+                  "Value": "{colors.semantic.error.on-error}"
+                }
+              }
+            }
+          }
+        },
+        "outlined": {
+          "border": {
+            "$type": "color",
+            "$value": "{colors.semantic.error.default}",
+            "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Border colour of outlined destructive inputs, on surface backgrounds.",
+            "$extensions": {
+              "com.figma": {
+                "collection": "Inputs",
+                "codeSyntax": {
+                  "WEB": "var(--ingrid-input-destructive-outlined-border)"
+                },
+                "scopes": [
+                  "STROKE_COLOR"
+                ],
+                "modes": {
+                  "Value": "{colors.semantic.error.default}"
+                }
+              }
+            }
+          },
+          "label": {
+            "$type": "color",
+            "$value": "{colors.semantic.error.darker}",
+            "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour (icons use it too for now) of outlined destructive inputs, on surface backgrounds.",
+            "$extensions": {
+              "com.figma": {
+                "collection": "Inputs",
+                "codeSyntax": {
+                  "WEB": "var(--ingrid-input-destructive-outlined-label)"
+                },
+                "scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "modes": {
+                  "Value": "{colors.semantic.error.darker}"
+                }
+              }
+            }
+          }
+        },
+        "text": {
+          "label": {
+            "$type": "color",
+            "$value": "{colors.semantic.error.darker}",
+            "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour (icons use it too for now) of text-only destructive inputs, on surface backgrounds.",
+            "$extensions": {
+              "com.figma": {
+                "collection": "Inputs",
+                "codeSyntax": {
+                  "WEB": "var(--ingrid-input-destructive-text-label)"
+                },
+                "scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "modes": {
+                  "Value": "{colors.semantic.error.darker}"
+                }
               }
             }
           }
         }
       }
     },
-    "neutral": {
-      "filled": {
-        "background": {
-          "$type": "color",
-          "$value": "{colors.surface.inverse}",
-          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Background of filled neutral inputs (dark in Light mode). Use on surface backgrounds.",
+    "size": {
+      "border-radius": {
+        "$type": "number",
+        "$value": "{sizes.border-radius.subtle}",
+        "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Corner radius of inputs (all sizes and styles).",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Inputs",
+            "codeSyntax": {
+              "WEB": "var(--ingrid-input-border-radius)"
+            },
+            "scopes": [
+              "CORNER_RADIUS"
+            ],
+            "modes": {
+              "Value": "{sizes.border-radius.subtle}"
+            }
+          }
+        }
+      },
+      "border-width": {
+        "$type": "number",
+        "$value": "{sizes.border.default}",
+        "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Border width of outlined inputs.",
+        "$extensions": {
+          "com.figma": {
+            "collection": "Inputs",
+            "codeSyntax": {
+              "WEB": "var(--ingrid-input-border-width)"
+            },
+            "scopes": [
+              "STROKE_FLOAT"
+            ],
+            "modes": {
+              "Value": "{sizes.border.default}"
+            }
+          }
+        }
+      },
+      "small": {
+        "height": {
+          "$type": "number",
+          "$value": "{sizes.dimension.md}",
+          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Height (24px) of small inputs; square inputs such as icon buttons use it as width too.",
           "$extensions": {
             "com.figma": {
               "collection": "Inputs",
               "codeSyntax": {
-                "WEB": "var(--ingrid-input-neutral-filled-background)"
+                "WEB": "var(--ingrid-input-small-height)"
               },
               "scopes": [
-                "FRAME_FILL"
+                "WIDTH_HEIGHT"
               ],
               "modes": {
-                "Value": "{colors.surface.inverse}"
+                "Value": "{sizes.dimension.md}"
               }
             }
           }
         },
-        "label": {
-          "$type": "color",
-          "$value": "{colors.surface.on-surface.inverse}",
-          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour (icons use it too for now) of filled neutral inputs. Only on neutral/filled/background.",
+        "padding-x": {
+          "$type": "number",
+          "$value": "{sizes.spacing.xs}",
+          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Left and right padding of small inputs.",
           "$extensions": {
             "com.figma": {
               "collection": "Inputs",
               "codeSyntax": {
-                "WEB": "var(--ingrid-input-neutral-filled-label)"
+                "WEB": "var(--ingrid-input-small-padding-x)"
               },
               "scopes": [
-                "SHAPE_FILL",
-                "TEXT_FILL"
+                "GAP"
               ],
               "modes": {
-                "Value": "{colors.surface.on-surface.inverse}"
+                "Value": "{sizes.spacing.xs}"
+              }
+            }
+          }
+        },
+        "gap": {
+          "$type": "number",
+          "$value": "{sizes.spacing.2xs}",
+          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Gap between icon and label in small inputs.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Inputs",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-input-small-gap)"
+              },
+              "scopes": [
+                "GAP"
+              ],
+              "modes": {
+                "Value": "{sizes.spacing.2xs}"
+              }
+            }
+          }
+        },
+        "icon-size": {
+          "$type": "number",
+          "$value": "{sizes.dimension.xs}",
+          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Icon size in small inputs.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Inputs",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-input-small-icon-size)"
+              },
+              "scopes": [
+                "WIDTH_HEIGHT"
+              ],
+              "modes": {
+                "Value": "{sizes.dimension.xs}"
               }
             }
           }
         }
       },
-      "outlined": {
-        "border": {
-          "$type": "color",
-          "$value": "{colors.surface.inverse}",
-          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Border colour of outlined neutral inputs, on surface backgrounds.",
+      "medium": {
+        "height": {
+          "$type": "number",
+          "$value": "{sizes.dimension.lg}",
+          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Height (32px) of medium inputs; square inputs such as icon buttons use it as width too.",
           "$extensions": {
             "com.figma": {
               "collection": "Inputs",
               "codeSyntax": {
-                "WEB": "var(--ingrid-input-neutral-outlined-border)"
+                "WEB": "var(--ingrid-input-medium-height)"
               },
               "scopes": [
-                "STROKE_COLOR"
+                "WIDTH_HEIGHT"
               ],
               "modes": {
-                "Value": "{colors.surface.inverse}"
+                "Value": "{sizes.dimension.lg}"
               }
             }
           }
         },
-        "label": {
-          "$type": "color",
-          "$value": "{colors.surface.on-surface.default}",
-          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour (icons use it too for now) of outlined neutral inputs, on surface backgrounds.",
+        "padding-x": {
+          "$type": "number",
+          "$value": "{sizes.spacing.sm}",
+          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Left and right padding of medium inputs.",
           "$extensions": {
             "com.figma": {
               "collection": "Inputs",
               "codeSyntax": {
-                "WEB": "var(--ingrid-input-neutral-outlined-label)"
+                "WEB": "var(--ingrid-input-medium-padding-x)"
               },
               "scopes": [
-                "SHAPE_FILL",
-                "TEXT_FILL"
+                "GAP"
               ],
               "modes": {
-                "Value": "{colors.surface.on-surface.default}"
+                "Value": "{sizes.spacing.sm}"
+              }
+            }
+          }
+        },
+        "gap": {
+          "$type": "number",
+          "$value": "{sizes.spacing.xs}",
+          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Gap between icon and label in medium inputs.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Inputs",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-input-medium-gap)"
+              },
+              "scopes": [
+                "GAP"
+              ],
+              "modes": {
+                "Value": "{sizes.spacing.xs}"
+              }
+            }
+          }
+        },
+        "icon-size": {
+          "$type": "number",
+          "$value": "{sizes.dimension.sm}",
+          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Icon size in medium inputs.",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Inputs",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-input-medium-icon-size)"
+              },
+              "scopes": [
+                "WIDTH_HEIGHT"
+              ],
+              "modes": {
+                "Value": "{sizes.dimension.sm}"
               }
             }
           }
         }
       },
-      "text": {
-        "label": {
-          "$type": "color",
-          "$value": "{colors.surface.on-surface.default}",
-          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour (icons use it too for now) of text-only neutral inputs, on surface backgrounds.",
+      "large": {
+        "height": {
+          "$type": "number",
+          "$value": "{sizes.dimension.3xl}",
+          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Height (44px) of large inputs; square inputs such as icon buttons use it as width too.",
           "$extensions": {
             "com.figma": {
               "collection": "Inputs",
               "codeSyntax": {
-                "WEB": "var(--ingrid-input-neutral-text-label)"
+                "WEB": "var(--ingrid-input-large-height)"
               },
               "scopes": [
-                "SHAPE_FILL",
-                "TEXT_FILL"
+                "WIDTH_HEIGHT"
               ],
               "modes": {
-                "Value": "{colors.surface.on-surface.default}"
-              }
-            }
-          }
-        }
-      }
-    },
-    "destructive": {
-      "filled": {
-        "background": {
-          "$type": "color",
-          "$value": "{colors.semantic.error.default}",
-          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Background of filled destructive inputs (actions that delete or can’t be undone).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Inputs",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-input-destructive-filled-background)"
-              },
-              "scopes": [
-                "FRAME_FILL"
-              ],
-              "modes": {
-                "Value": "{colors.semantic.error.default}"
+                "Value": "{sizes.dimension.3xl}"
               }
             }
           }
         },
-        "label": {
-          "$type": "color",
-          "$value": "{colors.semantic.error.on-error}",
-          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour (icons use it too for now) of filled destructive inputs. Only on destructive/filled/background.",
+        "padding-x": {
+          "$type": "number",
+          "$value": "{sizes.spacing.md}",
+          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Left and right padding of large inputs.",
           "$extensions": {
             "com.figma": {
               "collection": "Inputs",
               "codeSyntax": {
-                "WEB": "var(--ingrid-input-destructive-filled-label)"
+                "WEB": "var(--ingrid-input-large-padding-x)"
               },
               "scopes": [
-                "SHAPE_FILL",
-                "TEXT_FILL"
+                "GAP"
               ],
               "modes": {
-                "Value": "{colors.semantic.error.on-error}"
-              }
-            }
-          }
-        }
-      },
-      "outlined": {
-        "border": {
-          "$type": "color",
-          "$value": "{colors.semantic.error.default}",
-          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Border colour of outlined destructive inputs, on surface backgrounds.",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Inputs",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-input-destructive-outlined-border)"
-              },
-              "scopes": [
-                "STROKE_COLOR"
-              ],
-              "modes": {
-                "Value": "{colors.semantic.error.default}"
+                "Value": "{sizes.spacing.md}"
               }
             }
           }
         },
-        "label": {
-          "$type": "color",
-          "$value": "{colors.semantic.error.darker}",
-          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour (icons use it too for now) of outlined destructive inputs, on surface backgrounds.",
+        "gap": {
+          "$type": "number",
+          "$value": "{sizes.spacing.xs}",
+          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Gap between icon and label in large inputs.",
           "$extensions": {
             "com.figma": {
               "collection": "Inputs",
               "codeSyntax": {
-                "WEB": "var(--ingrid-input-destructive-outlined-label)"
+                "WEB": "var(--ingrid-input-large-gap)"
               },
               "scopes": [
-                "SHAPE_FILL",
-                "TEXT_FILL"
+                "GAP"
               ],
               "modes": {
-                "Value": "{colors.semantic.error.darker}"
+                "Value": "{sizes.spacing.xs}"
               }
             }
           }
-        }
-      },
-      "text": {
-        "label": {
-          "$type": "color",
-          "$value": "{colors.semantic.error.darker}",
-          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Label text colour (icons use it too for now) of text-only destructive inputs, on surface backgrounds.",
+        },
+        "icon-size": {
+          "$type": "number",
+          "$value": "{sizes.dimension.md}",
+          "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Icon size in large inputs.",
           "$extensions": {
             "com.figma": {
               "collection": "Inputs",
               "codeSyntax": {
-                "WEB": "var(--ingrid-input-destructive-text-label)"
+                "WEB": "var(--ingrid-input-large-icon-size)"
               },
               "scopes": [
-                "SHAPE_FILL",
-                "TEXT_FILL"
+                "WIDTH_HEIGHT"
               ],
               "modes": {
-                "Value": "{colors.semantic.error.darker}"
+                "Value": "{sizes.dimension.md}"
               }
             }
           }
