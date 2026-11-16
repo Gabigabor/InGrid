@@ -57,6 +57,8 @@
         <a href="https://github.com/settings/personal-access-tokens/new" target="_blank">Create one</a>.</span>
     </label>
     <label class="check"><input id="remember" type="checkbox" /> Remember the token on this computer</label>
+    <label class="check"><input id="removeMissing" type="checkbox" /> Delete collections that aren’t in this export</label>
+    <p class="hint" id="removeHint">Tokens deleted inside an exported collection are always removed. Tick this to also remove whole collections from the repo that this export doesn’t contain.</p>
 
     <h2>Pull request</h2>
     <label><span>Title</span><input id="title" type="text" /></label>
@@ -259,19 +261,24 @@
       const escapeHtml = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 
       // ---- merge -------------------------------------------------------------------------------
-      // One Figma file holds only some collections (Inputs lives in Components, the rest in
-      // Foundation). Replace the collections this file has; keep the others from the repo.
-      // Text styles are replaced only when this file has text styles.
-      function mergeTokens(base, local) {
+      // Each exported collection replaces the repo's copy whole, so deleted tokens disappear.
+      // Collections the export doesn't contain are kept (a run in Foundation alone has no
+      // Inputs), unless removeMissing is set: then the repo gets exactly this export.
+      // Text styles are replaced only when the export has text styles; Figma can't list a
+      // library's text styles, so a run in Components keeps the repo's.
+      function mergeTokens(base, local, removeMissing = false) {
         const lm = local.$extensions['com.figma'];
         const localKeys = new Set(lm.collections.map((c) => c.key));
-        const summary = { updated: lm.collections.map((c) => c.name), kept: [], textStyles: lm.textStyles.length ? 'updated' : 'none' };
+        const summary = { updated: lm.collections.map((c) => c.name), kept: [], removed: [], textStyles: lm.textStyles.length ? 'updated' : 'none' };
         if (!base) return { doc: local, summary };
 
         const bm = (base.$extensions && base.$extensions['com.figma']) || { collections: [], textStyles: [] };
-        const collections = bm.collections.map((c) => (localKeys.has(c.key) ? lm.collections.find((l) => l.key === c.key) : c));
+        const missing = bm.collections.filter((c) => !localKeys.has(c.key));
+        const collections = bm.collections
+          .filter((c) => localKeys.has(c.key) || !removeMissing)
+          .map((c) => (localKeys.has(c.key) ? lm.collections.find((l) => l.key === c.key) : c));
         for (const c of lm.collections) if (!bm.collections.some((b) => b.key === c.key)) collections.push(c);
-        summary.kept = bm.collections.filter((c) => !localKeys.has(c.key)).map((c) => c.name);
+        summary[removeMissing ? 'removed' : 'kept'] = missing.map((c) => c.name);
         if (!lm.textStyles.length && bm.textStyles.length) summary.textStyles = 'kept';
 
         const doc = {
@@ -351,7 +358,7 @@
         }
 
         onStep('Merging and building tokens…');
-        const { doc, summary } = mergeTokens(current, localTokens);
+        const { doc, summary } = mergeTokens(current, localTokens, f.removeMissing);
         const json = JSON.stringify(doc, null, 2) + '\n';
         const built = buildTokenFiles(doc); // throws with the same messages as npm run tokens
         const dist = f.distDir.replace(/\/+$/, '');
@@ -377,6 +384,7 @@
           '',
           `- Updated collections: ${summary.updated.join(', ') || 'none'}`,
           `- Kept from ${base}: ${summary.kept.join(', ') || 'none'}`,
+          `- Removed (not in Figma): ${summary.removed.join(', ') || 'none'}`,
           `- Text styles: ${summary.textStyles === 'updated' ? 'updated' : summary.textStyles === 'kept' ? `kept from ${base}` : 'none'}`,
           `- ${built.tokenCount} tokens and ${built.textStyleCount} text styles; \`${dist}/\` rebuilt with build-core.mjs`,
         ].filter((l) => l !== null);
@@ -398,6 +406,7 @@
         title: $('title').value.trim(),
         message: $('message').value.trim(),
         body: $('body').value,
+        removeMissing: $('removeMissing').checked,
       });
 
       onmessage = (event) => {
@@ -414,10 +423,13 @@
         } else if (msg.type === 'ready') {
           localTokens = msg.tokens;
           const meta = msg.tokens.$extensions['com.figma'];
+          const fromLibraries = msg.libraryCollections || [];
           $('summary').textContent =
             `${msg.count} variables in ${meta.collections.map((c) => c.name).join(', ')}` +
-            (meta.textStyles.length ? `, and ${meta.textStyles.length} text styles` : '') +
-            '. Collections that aren’t in this file are kept as they are in the repo.';
+            (fromLibraries.length ? ` (${fromLibraries.join(', ')} from libraries)` : '') +
+            (meta.textStyles.length ? `, and ${meta.textStyles.length} text styles` : '. Text styles are kept from the repo') + '.';
+          // A run that also read the libraries sees every collection, so a full override is safe.
+          $('removeMissing').checked = fromLibraries.length > 0;
           $('create').disabled = false;
           $('download').disabled = false;
         } else if (msg.type === 'error') {

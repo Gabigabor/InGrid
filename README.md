@@ -31,9 +31,11 @@ Figma variables ──(Ingrid token export plugin)──▶ packages/tokens/src/
 ## Updating tokens from Figma
 
 1. One-time setup: in the Figma desktop app, go to **Plugins → Development → Import plugin from manifest…** and pick `tools/figma-token-export/manifest.json`. Create a [fine-grained GitHub token](https://github.com/settings/personal-access-tokens/new) for this repository only, with **Contents: Read and write** and **Pull requests: Read and write**.
-2. Open the Ingrid Foundation file (or Components, for Inputs) and run **Plugins → Development → Ingrid token export**.
+2. Open the **Components** file and run **Plugins → Development → Ingrid token export**. It exports Inputs plus every collection of the libraries Components uses (all of Foundation), so one run covers every variable. Running it in Foundation works too; it then exports Foundation only.
 3. Check the repository, branches and paths, paste the token, and click **Create pull request**. The plugin:
-   - replaces the collections that are in the open file and keeps the others from the base branch (Foundation doesn't hold Inputs, Components holds only Inputs), and replaces text styles only if the file has them;
+   - replaces each exported collection whole, so variables deleted in Figma disappear from the tokens;
+   - with **Delete collections that aren’t in this export** ticked (the default when the libraries were read), removes repo collections that Figma no longer has; unticked, it keeps them (needed when running in Foundation alone, which has no Inputs);
+   - takes text styles from the open file; Figma can’t list a library’s text styles, so a run in Components keeps the repo’s. After changing text styles, run it in Foundation;
    - rebuilds `packages/tokens/dist/` with the same code as `npm run tokens` (`packages/tokens/scripts/build-core.mjs`), so CI passes;
    - commits the JSON and `dist/` to a new branch and opens a pull request. If nothing changed, it says so and creates nothing.
 
