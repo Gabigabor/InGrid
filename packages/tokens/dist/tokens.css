@@ -583,7 +583,7 @@
   --ingrid-label-small-line-height: var(--ingrid-size-400);
   --ingrid-label-small-font-weight: var(--ingrid-font-weight-semibold);
   --ingrid-label-small-letter-spacing: var(--ingrid-letter-spacing-500);
-  --ingrid-input-primary-filled-background: var(--ingrid-color-primary-default);
+  --ingrid-input-primary-filled-background: var(--ingrid-color-accent-1-default);
   --ingrid-input-primary-filled-label: var(--ingrid-color-primary-on-primary);
   --ingrid-input-primary-outlined-border: var(--ingrid-color-primary-default);
   --ingrid-input-primary-outlined-label: var(--ingrid-color-surface-on-surface-brand);

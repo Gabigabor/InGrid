@@ -10761,7 +10761,7 @@
         "filled": {
           "background": {
             "$type": "color",
-            "$value": "{colors.primary.default}",
+            "$value": "{colors.accent.1.default}",
             "$description": "Shared by all input components (buttons, text fields, selects, checkboxes, toggles…). Background of filled primary inputs.",
             "$extensions": {
               "com.figma": {
@@ -10773,7 +10773,7 @@
                   "FRAME_FILL"
                 ],
                 "modes": {
-                  "Value": "{colors.primary.default}"
+                  "Value": "{colors.accent.1.default}"
                 }
               }
             }
