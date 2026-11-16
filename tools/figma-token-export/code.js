@@ -1,18 +1,22 @@
 // Ingrid token export — Figma development plugin.
 //
-// Reads every local variable collection, mode, alias and text style in the open
-// Figma file and turns them into DTCG-style JSON (packages/tokens/src/ingrid.tokens.json).
+// Reads every variable collection, mode, alias and text style in the open Figma file,
+// plus all collections of the libraries it uses (run it in Components to get Inputs and
+// all of Foundation), and turns them into DTCG-style JSON (packages/tokens/src/ingrid.tokens.json).
 // The UI (ui.html) merges that export into the repo's current file, rebuilds dist/ and
 // opens a pull request on GitHub. This file only talks to Figma.
 //
 // The token-building logic lives in buildIngridTokens() so it can also be run
 // on its own (for example through the Figma Plugin API from a script).
 
-async function buildIngridTokens() {
-  const collections = await figma.variables.getLocalVariableCollectionsAsync();
+// With includeLibraries, collections from the libraries this file uses are exported too
+// (all collections of each library), so one run in Components covers Foundation as well.
+// Needs the "teamlibrary" permission in manifest.json.
+async function buildIngridTokens({ includeLibraries = false } = {}) {
+  const localCollections = await figma.variables.getLocalVariableCollectionsAsync();
   const variables = await figma.variables.getLocalVariablesAsync();
   const varById = new Map(variables.map((v) => [v.id, v]));
-  const colById = new Map(collections.map((c) => [c.id, c]));
+  const colById = new Map(localCollections.map((c) => [c.id, c]));
 
   const colKey = (name) => name.trim().toLowerCase().replace(/\s+/g, '-');
   const pathOf = (v) => [colKey(colById.get(v.variableCollectionId).name), ...v.name.split('/')];
@@ -51,6 +55,28 @@ async function buildIngridTokens() {
   };
   for (const v of variables) for (const val of Object.values(v.valuesByMode)) for (const a of aliasIds(val)) await loadVariable(a);
 
+  // Library collections, in library order, with their variables in library order.
+  const idsOf = new Map(localCollections.map((c) => [c.id, c.variableIds]));
+  const libraryCollections = [];
+  if (includeLibraries && figma.teamLibrary) {
+    const available = await figma.teamLibrary.getAvailableLibraryVariableCollectionsAsync();
+    const usedKeys = new Set([...colById.values()].filter((c) => c.remote).map((c) => c.key));
+    const libraries = new Set(available.filter((a) => usedKeys.has(a.key)).map((a) => a.libraryName));
+    for (const lib of available.filter((a) => libraries.has(a.libraryName))) {
+      const listed = await figma.teamLibrary.getVariablesInLibraryCollectionAsync(lib.key);
+      const imported = await Promise.all(listed.map((lv) => figma.variables.importVariableByKeyAsync(lv.key)));
+      if (!imported.length) continue;
+      for (const v of imported) varById.set(v.id, v);
+      const col = colById.get(imported[0].variableCollectionId) || (await figma.variables.getVariableCollectionByIdAsync(imported[0].variableCollectionId));
+      if (!col) throw new Error(`Can’t read the library collection ${lib.name} (${lib.libraryName}).`);
+      colById.set(col.id, col);
+      idsOf.set(col.id, imported.map((v) => v.id));
+      libraryCollections.push(col);
+    }
+    for (const v of [...varById.values()]) for (const val of Object.values(v.valuesByMode)) for (const a of aliasIds(val)) await loadVariable(a);
+  }
+  const collections = [...libraryCollections, ...localCollections.filter((c) => !libraryCollections.some((l) => l.key && l.key === c.key))];
+
   const mustGet = (id, where) => {
     const v = varById.get(id);
     if (!v) throw new Error(`Broken alias in ${where}: ${id}. If it points at a library variable, check that the library is enabled in this file (Assets → Libraries) and that you can open the library file.`);
@@ -88,7 +114,7 @@ async function buildIngridTokens() {
     return isRgb(v) ? hex(v) : typeof v === 'number' ? round(v) : v;
   };
 
-  if (!collections.length) throw new Error('This file has no local variables. Open the Foundation or Components file.');
+  if (!collections.length) throw new Error('This file has no variables. Open the Foundation or Components file.');
 
   const root = {
     $extensions: {
@@ -107,7 +133,7 @@ async function buildIngridTokens() {
 
   for (const col of collections) {
     const defaultMode = (col.modes.find((m) => m.modeId === col.defaultModeId) || col.modes[0]).name;
-    for (const id of col.variableIds) {
+    for (const id of idsOf.get(col.id)) {
       const v = varById.get(id);
       if (!v) continue;
       const path = pathOf(v);
@@ -155,6 +181,7 @@ async function buildIngridTokens() {
     });
   }
 
+  Object.defineProperty(root, 'libraryCollections', { value: libraryCollections.map((c) => c.name), enumerable: false });
   return root;
 }
 
@@ -181,8 +208,8 @@ if (typeof __html__ !== 'undefined') {
     const token = (await figma.clientStorage.getAsync(TOKEN_KEY)) || '';
     figma.ui.postMessage({ type: 'settings', settings, token, fileName: figma.root.name });
     try {
-      const tokens = await buildIngridTokens();
-      figma.ui.postMessage({ type: 'ready', tokens, count: countTokens(tokens) });
+      const tokens = await buildIngridTokens({ includeLibraries: true });
+      figma.ui.postMessage({ type: 'ready', tokens, count: countTokens(tokens), libraryCollections: tokens.libraryCollections });
     } catch (err) {
       figma.ui.postMessage({ type: 'error', message: String(err && err.message ? err.message : err) });
     }
