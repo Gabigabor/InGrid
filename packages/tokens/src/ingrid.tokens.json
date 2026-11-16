@@ -5332,269 +5332,6 @@
         }
       }
     },
-    "typography": {
-      "font-family": {
-        "sans": {
-          "$type": "string",
-          "$value": "Source Sans Pro",
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-font-family-sans)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": "Source Sans Pro"
-              }
-            }
-          }
-        }
-      },
-      "font-weight": {
-        "extralight": {
-          "$type": "number",
-          "$value": 200,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-font-weight-extralight)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": 200
-              }
-            }
-          }
-        },
-        "light": {
-          "$type": "number",
-          "$value": 300,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-font-weight-light)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": 300
-              }
-            }
-          }
-        },
-        "regular": {
-          "$type": "number",
-          "$value": 400,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-font-weight-regular)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": 400
-              }
-            }
-          }
-        },
-        "medium": {
-          "$type": "number",
-          "$value": 500,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-font-weight-medium)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": 500
-              }
-            }
-          }
-        },
-        "semibold": {
-          "$type": "number",
-          "$value": 600,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-font-weight-semibold)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": 600
-              }
-            }
-          }
-        },
-        "bold": {
-          "$type": "number",
-          "$value": 700,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-font-weight-bold)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": 700
-              }
-            }
-          }
-        },
-        "extrabold": {
-          "$type": "number",
-          "$value": 800,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-font-weight-extrabold)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": 800
-              }
-            }
-          }
-        },
-        "black": {
-          "$type": "number",
-          "$value": 900,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-font-weight-black)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": 900
-              }
-            }
-          }
-        }
-      },
-      "letter-spacing": {
-        "300": {
-          "$type": "number",
-          "$value": -0.8,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-letter-spacing-300)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": -0.8
-              }
-            }
-          }
-        },
-        "400": {
-          "$type": "number",
-          "$value": -0.4,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-letter-spacing-400)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": -0.4
-              }
-            }
-          }
-        },
-        "500": {
-          "$type": "number",
-          "$value": 0,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-letter-spacing-500)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": 0
-              }
-            }
-          }
-        },
-        "600": {
-          "$type": "number",
-          "$value": 0.4,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-letter-spacing-600)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": 0.4
-              }
-            }
-          }
-        },
-        "700": {
-          "$type": "number",
-          "$value": 0.8,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-letter-spacing-700)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": 0.8
-              }
-            }
-          }
-        },
-        "800": {
-          "$type": "number",
-          "$value": 1.6,
-          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
-          "$extensions": {
-            "com.figma": {
-              "collection": "Primitives",
-              "codeSyntax": {
-                "WEB": "var(--ingrid-letter-spacing-800)"
-              },
-              "scopes": [],
-              "modes": {
-                "Value": 1.6
-              }
-            }
-          }
-        }
-      }
-    },
     "size": {
       "0": {
         "$type": "number",
@@ -6306,6 +6043,269 @@
             "scopes": [],
             "modes": {
               "Value": 9999
+            }
+          }
+        }
+      }
+    },
+    "typography": {
+      "font-family": {
+        "sans": {
+          "$type": "string",
+          "$value": "Source Sans Pro",
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-font-family-sans)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": "Source Sans Pro"
+              }
+            }
+          }
+        }
+      },
+      "font-weight": {
+        "extralight": {
+          "$type": "number",
+          "$value": 200,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-font-weight-extralight)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": 200
+              }
+            }
+          }
+        },
+        "light": {
+          "$type": "number",
+          "$value": 300,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-font-weight-light)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": 300
+              }
+            }
+          }
+        },
+        "regular": {
+          "$type": "number",
+          "$value": 400,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-font-weight-regular)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": 400
+              }
+            }
+          }
+        },
+        "medium": {
+          "$type": "number",
+          "$value": 500,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-font-weight-medium)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": 500
+              }
+            }
+          }
+        },
+        "semibold": {
+          "$type": "number",
+          "$value": 600,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-font-weight-semibold)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": 600
+              }
+            }
+          }
+        },
+        "bold": {
+          "$type": "number",
+          "$value": 700,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-font-weight-bold)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": 700
+              }
+            }
+          }
+        },
+        "extrabold": {
+          "$type": "number",
+          "$value": 800,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-font-weight-extrabold)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": 800
+              }
+            }
+          }
+        },
+        "black": {
+          "$type": "number",
+          "$value": 900,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-font-weight-black)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": 900
+              }
+            }
+          }
+        }
+      },
+      "letter-spacing": {
+        "300": {
+          "$type": "number",
+          "$value": -0.8,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-letter-spacing-300)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": -0.8
+              }
+            }
+          }
+        },
+        "400": {
+          "$type": "number",
+          "$value": -0.4,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-letter-spacing-400)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": -0.4
+              }
+            }
+          }
+        },
+        "500": {
+          "$type": "number",
+          "$value": 0,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-letter-spacing-500)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": 0
+              }
+            }
+          }
+        },
+        "600": {
+          "$type": "number",
+          "$value": 0.4,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-letter-spacing-600)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": 0.4
+              }
+            }
+          }
+        },
+        "700": {
+          "$type": "number",
+          "$value": 0.8,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-letter-spacing-700)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": 0.8
+              }
+            }
+          }
+        },
+        "800": {
+          "$type": "number",
+          "$value": 1.6,
+          "$description": "Primitive value. Do not apply directly in designs; reference it through a semantic token (Colors, Sizes, Opacity, Typography).",
+          "$extensions": {
+            "com.figma": {
+              "collection": "Primitives",
+              "codeSyntax": {
+                "WEB": "var(--ingrid-letter-spacing-800)"
+              },
+              "scopes": [],
+              "modes": {
+                "Value": 1.6
+              }
             }
           }
         }
