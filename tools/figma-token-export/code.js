@@ -34,7 +34,13 @@ async function buildIngridTokens() {
   const aliasIds = (val) => (isAlias(val) ? [val.id] : isMix(val) ? [...aliasIds(val.color), ...aliasIds(val.opacity)] : []);
   const loadVariable = async (id) => {
     if (varById.has(id)) return;
-    const v = await figma.variables.getVariableByIdAsync(id);
+    let v = await figma.variables.getVariableByIdAsync(id);
+    // A library variable that isn’t loaded in this session returns null by ID. Its ID is
+    // "VariableID:<key>/<node>", so load it from the library by key instead.
+    const key = !v && (id.match(/^VariableID:([0-9a-f]{40})\//) || [])[1];
+    if (key) {
+      try { v = await figma.variables.importVariableByKeyAsync(key); } catch (_) { v = null; }
+    }
     if (!v) return; // reported as a broken alias below
     varById.set(id, v);
     if (!colById.has(v.variableCollectionId)) {
@@ -47,7 +53,7 @@ async function buildIngridTokens() {
 
   const mustGet = (id, where) => {
     const v = varById.get(id);
-    if (!v) throw new Error(`Broken alias in ${where}: ${id}`);
+    if (!v) throw new Error(`Broken alias in ${where}: ${id}. If it points at a library variable, check that the library is enabled in this file (Assets → Libraries) and that you can open the library file.`);
     if (!colById.has(v.variableCollectionId)) throw new Error(`${where} aliases ${v.name}, whose collection can’t be read. Is its library enabled in this file?`);
     return v;
   };
