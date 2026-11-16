@@ -6,5 +6,8 @@
   "ui": "ui.html",
   "editorType": ["figma"],
   "documentAccess": "dynamic-page",
-  "networkAccess": { "allowedDomains": ["none"] }
+  "networkAccess": {
+    "allowedDomains": ["https://api.github.com"],
+    "reasoning": "Creates a branch, a commit and a pull request with the exported tokens in the GitHub repository you enter."
+  }
 }

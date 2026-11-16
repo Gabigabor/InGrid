@@ -7,6 +7,8 @@
   "scripts": {
     "tokens": "node packages/tokens/scripts/build.mjs",
     "tokens:check": "node packages/tokens/scripts/build.mjs && git diff --exit-code -- packages/tokens/dist",
+    "plugin": "node tools/figma-token-export/build.mjs",
+    "plugin:check": "node tools/figma-token-export/build.mjs --check",
     "lint:css": "node scripts/check-css-tokens.mjs",
     "typecheck": "tsc -p packages/react --noEmit",
     "storybook": "storybook dev -p 6006",

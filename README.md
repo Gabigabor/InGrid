@@ -23,17 +23,23 @@ Figma variables ──(Ingrid token export plugin)──▶ packages/tokens/src/
 | Path | What it is |
 | --- | --- |
 | `docs/variable-taxonomy.md` | The rules for naming and changing variables in Figma. |
-| `tools/figma-token-export/` | A Figma development plugin that exports every variable and text style to JSON. It works on any Figma plan (the Variables REST API is Enterprise-only). |
+| `tools/figma-token-export/` | A Figma development plugin that exports every variable and text style to JSON and opens a pull request with it. It works on any Figma plan (the Variables REST API is Enterprise-only). |
 | `packages/tokens/` | `@ingrid/tokens`: the exported JSON and the dependency-free build that turns it into CSS and TypeScript. |
 | `packages/react/` | `@ingrid/react`: React components. Behaviour and accessibility come from [React Aria Components](https://react-spectrum.adobe.com/react-aria/); the look comes only from Ingrid tokens. |
 | `scripts/check-css-tokens.mjs` | Fails if component CSS uses a token that doesn't exist or a raw value (hex, px, …). |
 
 ## Updating tokens from Figma
 
-1. One-time setup: in the Figma desktop app, go to **Plugins → Development → Import plugin from manifest…** and pick `tools/figma-token-export/manifest.json`.
-2. Open the Ingrid Foundation file and run **Plugins → Development → Ingrid token export**.
-3. Click **Download ingrid.tokens.json** and save it over `packages/tokens/src/ingrid.tokens.json`.
-4. Run `npm run tokens`, then commit the JSON and `packages/tokens/dist/` together.
+1. One-time setup: in the Figma desktop app, go to **Plugins → Development → Import plugin from manifest…** and pick `tools/figma-token-export/manifest.json`. Create a [fine-grained GitHub token](https://github.com/settings/personal-access-tokens/new) for this repository only, with **Contents: Read and write** and **Pull requests: Read and write**.
+2. Open the Ingrid Foundation file (or Components, for Inputs) and run **Plugins → Development → Ingrid token export**.
+3. Check the repository, branches and paths, paste the token, and click **Create pull request**. The plugin:
+   - replaces the collections that are in the open file and keeps the others from the base branch (Foundation doesn't hold Inputs, Components holds only Inputs), and replaces text styles only if the file has them;
+   - rebuilds `packages/tokens/dist/` with the same code as `npm run tokens` (`packages/tokens/scripts/build-core.mjs`), so CI passes;
+   - commits the JSON and `dist/` to a new branch and opens a pull request. If nothing changed, it says so and creates nothing.
+
+   Settings, and the token if you tick *Remember*, are stored on your computer with `figma.clientStorage`, never in the Figma file. **Download JSON** still saves the open file's export without touching GitHub.
+
+After changing `build-core.mjs`, run `npm run plugin` to inline it into the plugin's `ui.html`; CI checks that it's up to date.
 
 The build stops with an error if a variable has no valid WEB code syntax, if two variables share a CSS name, or if an alias points at something that no longer exists. CI rebuilds the tokens and fails if `dist/` doesn't match the committed export.
 
@@ -71,6 +77,7 @@ Hovered, Pressed and Focused aren't props. React Aria tracks them (`data-hovered
 ```sh
 npm install
 npm run tokens        # rebuild tokens from the Figma export
+npm run plugin        # inline the token builder into the Figma plugin
 npm run lint:css      # component CSS uses only Ingrid tokens
 npm run typecheck
 npm run storybook     # http://localhost:6006, with a Light/Dark toolbar switch

@@ -17,6 +17,8 @@ jobs:
 
       - name: Tokens are built from the committed Figma export
         run: npm run tokens:check
+      - name: Figma export plugin uses the current token builder
+        run: npm run plugin:check
       - name: Component CSS uses only Ingrid tokens
         run: npm run lint:css
       - name: Typecheck
