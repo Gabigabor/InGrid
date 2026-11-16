@@ -1,8 +1,9 @@
 // Ingrid token export — Figma development plugin.
 //
-// Reads every local variable collection, mode, alias and text style in the
-// Ingrid Foundation file and writes one DTCG-style JSON file:
-// packages/tokens/src/ingrid.tokens.json
+// Reads every local variable collection, mode, alias and text style in the open
+// Figma file and turns them into DTCG-style JSON (packages/tokens/src/ingrid.tokens.json).
+// The UI (ui.html) merges that export into the repo's current file, rebuilds dist/ and
+// opens a pull request on GitHub. This file only talks to Figma.
 //
 // The token-building logic lives in buildIngridTokens() so it can also be run
 // on its own (for example through the Figma Plugin API from a script).
@@ -28,9 +29,26 @@ async function buildIngridTokens() {
   const isMix = (val) => val && typeof val === 'object' && 'color' in val && 'opacity' in val;
   const isRgb = (val) => val && typeof val === 'object' && 'r' in val;
 
+  // Aliases can point at library variables (for example Inputs in the Components file
+  // aliases Colors from Foundation). Load those, and their collections, up front.
+  const aliasIds = (val) => (isAlias(val) ? [val.id] : isMix(val) ? [...aliasIds(val.color), ...aliasIds(val.opacity)] : []);
+  const loadVariable = async (id) => {
+    if (varById.has(id)) return;
+    const v = await figma.variables.getVariableByIdAsync(id);
+    if (!v) return; // reported as a broken alias below
+    varById.set(id, v);
+    if (!colById.has(v.variableCollectionId)) {
+      const c = await figma.variables.getVariableCollectionByIdAsync(v.variableCollectionId);
+      if (c) colById.set(c.id, c);
+    }
+    for (const val of Object.values(v.valuesByMode)) for (const a of aliasIds(val)) await loadVariable(a);
+  };
+  for (const v of variables) for (const val of Object.values(v.valuesByMode)) for (const a of aliasIds(val)) await loadVariable(a);
+
   const mustGet = (id, where) => {
     const v = varById.get(id);
     if (!v) throw new Error(`Broken alias in ${where}: ${id}`);
+    if (!colById.has(v.variableCollectionId)) throw new Error(`${where} aliases ${v.name}, whose collection can’t be read. Is its library enabled in this file?`);
     return v;
   };
 
@@ -63,6 +81,8 @@ async function buildIngridTokens() {
     const v = resolve(variable, modeName);
     return isRgb(v) ? hex(v) : typeof v === 'number' ? round(v) : v;
   };
+
+  if (!collections.length) throw new Error('This file has no local variables. Open the Foundation or Components file.');
 
   const root = {
     $extensions: {
@@ -133,16 +153,45 @@ async function buildIngridTokens() {
 }
 
 // ---- Plugin glue (not needed when buildIngridTokens() is run on its own) ----
+// Settings (repository, branch, paths) and the GitHub token are kept in
+// figma.clientStorage: on this computer only, never in the Figma file.
+const SETTINGS_KEY = 'ingrid-export-settings';
+const TOKEN_KEY = 'ingrid-github-token';
+
+const countTokens = (node) => {
+  let count = 0;
+  for (const [k, v] of Object.entries(node)) {
+    if (k.startsWith('$') || !v || typeof v !== 'object') continue;
+    count += '$value' in v ? 1 : countTokens(v);
+  }
+  return count;
+};
+
 if (typeof __html__ !== 'undefined') {
-  figma.showUI(__html__, { width: 360, height: 220 });
-  buildIngridTokens()
-    .then((tokens) => {
-      const json = JSON.stringify(tokens, null, 2) + '\n';
-      let count = 0;
-      const walk = (n) => { for (const [k, v] of Object.entries(n)) { if (k.startsWith('$')) continue; if (v && typeof v === 'object') { if ('$value' in v) count++; else walk(v); } } };
-      walk(tokens);
-      figma.ui.postMessage({ type: 'ready', json, count });
-    })
-    .catch((err) => figma.ui.postMessage({ type: 'error', message: String(err && err.message ? err.message : err) }));
-  figma.ui.onmessage = (msg) => { if (msg && msg.type === 'close') figma.closePlugin(); };
+  figma.showUI(__html__, { width: 420, height: 640, themeColors: true });
+
+  (async () => {
+    const settings = (await figma.clientStorage.getAsync(SETTINGS_KEY)) || {};
+    const token = (await figma.clientStorage.getAsync(TOKEN_KEY)) || '';
+    figma.ui.postMessage({ type: 'settings', settings, token, fileName: figma.root.name });
+    try {
+      const tokens = await buildIngridTokens();
+      figma.ui.postMessage({ type: 'ready', tokens, count: countTokens(tokens) });
+    } catch (err) {
+      figma.ui.postMessage({ type: 'error', message: String(err && err.message ? err.message : err) });
+    }
+  })();
+
+  figma.ui.onmessage = async (msg) => {
+    if (!msg) return;
+    if (msg.type === 'save-settings') {
+      await figma.clientStorage.setAsync(SETTINGS_KEY, msg.settings);
+      if (msg.token) await figma.clientStorage.setAsync(TOKEN_KEY, msg.token);
+      else await figma.clientStorage.deleteAsync(TOKEN_KEY);
+    } else if (msg.type === 'notify') {
+      figma.notify(msg.message, { error: !!msg.error });
+    } else if (msg.type === 'close') {
+      figma.closePlugin();
+    }
+  };
 }
