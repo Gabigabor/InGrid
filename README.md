@@ -4,6 +4,8 @@ My private design system, built as a framework for future projects.
 
 **Figma variables are the source of truth.** Every colour, size, radius and type value in code comes from the Figma file through an exported token file. Components never hard-code design values.
 
+**Storybook:** https://gabigabor.github.io/InGrid/
+
 ```
 Figma variables ──(Ingrid token export plugin)──▶ packages/tokens/src/ingrid.tokens.json
                                                        │  npm run tokens
@@ -75,3 +77,5 @@ npm run storybook     # http://localhost:6006, with a Light/Dark toolbar switch
 ```
 
 CI (`.github/workflows/ci.yml`) runs all of the above, builds Storybook and uploads screenshots of every Button variant in Light and Dark.
+
+Every push to `main` also publishes Storybook to [GitHub Pages](https://gabigabor.github.io/InGrid/) (`.github/workflows/storybook-pages.yml`).
