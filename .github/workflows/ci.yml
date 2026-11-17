@@ -26,11 +26,11 @@ jobs:
       - name: Build Storybook
         run: npm run build-storybook
 
-      - name: Screenshot every Button variant (Light and Dark)
+      - name: Screenshot every component variant (Light and Dark)
         run: |
           npx playwright install --with-deps chromium
           node scripts/screenshot-stories.mjs
       - uses: actions/upload-artifact@v4
         with:
-          name: button-screenshots
+          name: component-screenshots
           path: screenshots/

@@ -74,6 +74,29 @@ import { Button } from '@ingrid/react';
 
 Hovered, Pressed and Focused aren't props. React Aria tracks them (`data-hovered`, `data-pressed`, `data-focus-visible`), and the CSS applies the matching state-overlay tokens. The focus ring appears only for keyboard focus. All other React Aria Button props, such as `onPress`, `type` and `aria-label`, pass through.
 
+### Icon Button
+
+A square button that shows only an icon. It uses the same Inputs tokens as Button, so the colours, states and sizes match.
+
+```tsx
+import { IconButton } from '@ingrid/react';
+
+<IconButton icon={<PlusIcon />} aria-label="Add" onPress={add} />
+<IconButton appearance="outlined" variant="destructive" icon={<TrashIcon />} aria-label="Delete" />
+<IconButton appearance="text" variant="inverse" size="small" icon={<CloseIcon />} aria-label="Close" />
+```
+
+| Prop | Values | Figma property |
+| --- | --- | --- |
+| `icon` | any SVG drawn with `currentColor` (required; sized by the button) | Icon |
+| `aria-label` | string (required: the button has no visible text) | — |
+| `appearance` | `filled` (default), `outlined`, `text` | Appearance |
+| `variant` | `primary` (default), `neutral`, `destructive`, `inverse` (for dark backgrounds) | Variant |
+| `size` | `small` 24 px, `medium` 32 px (default), `large` 44 px (width and height) | Size |
+| `isDisabled` | boolean | Disabled |
+
+States work as on Button: React Aria tracks Hovered, Pressed and Focused, and the CSS applies the state-overlay tokens.
+
 ## Development
 
 ```sh
@@ -85,6 +108,6 @@ npm run typecheck
 npm run storybook     # http://localhost:6006, with a Light/Dark toolbar switch
 ```
 
-CI (`.github/workflows/ci.yml`) runs all of the above, builds Storybook and uploads screenshots of every Button variant in Light and Dark.
+CI (`.github/workflows/ci.yml`) runs all of the above, builds Storybook and uploads screenshots of every Button and Icon Button variant in Light and Dark.
 
 Every push to `main` also publishes Storybook to [GitHub Pages](https://gabigabor.github.io/InGrid/) (`.github/workflows/storybook-pages.yml`).

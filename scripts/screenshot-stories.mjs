@@ -22,17 +22,27 @@ const errors = [];
 page.on('pageerror', (e) => errors.push(e.message));
 page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
 page.on('response', (r) => r.status() >= 400 && errors.push(`${r.status()} ${r.url()}`));
-for (const theme of ['light', 'dark']) {
-  await page.goto(`http://localhost:6007/iframe.html?id=inputs-button--all-variants&globals=theme:${theme}`);
-  try {
-    await page.locator('.ingrid-button').first().waitFor({ timeout: 20000 });
-  } catch (e) {
-    console.error(`Story did not render (${theme}):\n${errors.join('\n')}`);
-    throw e;
+// One AllVariants story per component: [file name, story id, selector that must render].
+const stories = [
+  ['button', 'inputs-button--all-variants', '.ingrid-button'],
+  ['icon-button', 'inputs-icon-button--all-variants', '.ingrid-icon-button'],
+];
+const saved = [];
+for (const [name, id, selector] of stories) {
+  for (const theme of ['light', 'dark']) {
+    await page.goto(`http://localhost:6007/iframe.html?id=${id}&globals=theme:${theme}`);
+    try {
+      await page.locator(selector).first().waitFor({ timeout: 20000 });
+    } catch (e) {
+      console.error(`Story ${id} did not render (${theme}):\n${errors.join('\n')}`);
+      throw e;
+    }
+    const file = `screenshots/${name}-${theme}.png`;
+    await page.screenshot({ path: file, fullPage: true });
+    saved.push(file);
   }
-  await page.screenshot({ path: `screenshots/button-${theme}.png`, fullPage: true });
 }
 await browser.close();
 server.close();
 if (errors.length) { console.error(errors.join('\n')); process.exit(1); }
-console.log('Saved screenshots/button-light.png and screenshots/button-dark.png');
+console.log(`Saved ${saved.join(', ')}`);
