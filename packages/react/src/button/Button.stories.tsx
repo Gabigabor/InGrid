@@ -17,6 +17,8 @@ type ButtonStoryArgs = React.ComponentProps<typeof Button> & {
 const meta = {
   title: 'Inputs/Button',
   component: Button,
+  // Docs page: the live example with a "Show code" button, then the property table with controls.
+  tags: ['autodocs'],
   args: {
     children: 'Button',
     appearance: 'filled',
@@ -26,24 +28,67 @@ const meta = {
     showTrailingIcon: false,
     isDisabled: false,
   },
-  // Controls are listed in this order. Names match the Figma component properties.
+  // Controls and the property table are listed in this order. Names match the Figma component properties.
   argTypes: {
-    children: { name: 'Label', control: 'text', description: 'Button text. Every button needs a label.' },
-    appearance: { name: 'Type', control: 'inline-radio', options: ['filled', 'outlined', 'text'] },
+    children: {
+      name: 'Label',
+      control: 'text',
+      description: 'Button text. Every button needs a label. Prop: `children`.',
+      table: { type: { summary: 'ReactNode' } },
+    },
+    appearance: {
+      name: 'Type',
+      control: 'radio',
+      options: ['filled', 'outlined', 'text'],
+      description: 'Emphasis: Filled (highest), Outlined (medium), Text (lowest). Prop: `appearance`.',
+      table: { type: { summary: "'filled' | 'outlined' | 'text'" }, defaultValue: { summary: 'filled' } },
+    },
     variant: {
       name: 'Color',
-      control: 'inline-radio',
+      control: 'radio',
       options: ['primary', 'neutral', 'destructive', 'inverse'],
-      description: 'Inverse is meant for dark backgrounds.',
+      description:
+        'Primary for the main action, Neutral for secondary actions, Destructive for actions that delete or can’t be undone, Inverse only on dark backgrounds. Prop: `variant`.',
+      table: {
+        type: { summary: "'primary' | 'neutral' | 'destructive' | 'inverse'" },
+        defaultValue: { summary: 'primary' },
+      },
     },
-    size: { name: 'Size', control: 'inline-radio', options: ['small', 'medium', 'large'] },
-    showLeadingIcon: { name: 'Leading icon', control: 'boolean' },
-    showTrailingIcon: { name: 'Trailing icon', control: 'boolean' },
-    isDisabled: { name: 'Disabled', control: 'boolean' },
+    size: {
+      name: 'Size',
+      control: 'radio',
+      options: ['small', 'medium', 'large'],
+      description: 'Height: Small 24 px, Medium 32 px, Large 44 px. Prop: `size`.',
+      table: { type: { summary: "'small' | 'medium' | 'large'" }, defaultValue: { summary: 'medium' } },
+    },
+    showLeadingIcon: {
+      name: 'Leading icon',
+      control: 'boolean',
+      description: 'Icon before the label. Prop: `leadingIcon` (any SVG, sized by the button).',
+      table: { type: { summary: 'ReactNode' } },
+    },
+    showTrailingIcon: {
+      name: 'Trailing icon',
+      control: 'boolean',
+      description: 'Icon after the label. Prop: `trailingIcon` (any SVG, sized by the button).',
+      table: { type: { summary: 'ReactNode' } },
+    },
+    isDisabled: {
+      name: 'Disabled',
+      control: 'boolean',
+      description: 'Uses the shared 25% disabled colours and ignores presses. Prop: `isDisabled`.',
+      table: { type: { summary: 'boolean' }, defaultValue: { summary: 'false' } },
+    },
     leadingIcon: { table: { disable: true } },
     trailingIcon: { table: { disable: true } },
   },
   parameters: {
+    docs: {
+      description: {
+        component:
+          'Buttons start an action. Hovered, Pressed and Focused come from React Aria, so they aren’t props. Every colour and size comes from the Ingrid Inputs tokens exported from Figma.',
+      },
+    },
     // Tokens tab next to Controls: which Ingrid token is behind each property of the button.
     tokenInspector: { selector: '.ingrid-button' },
     controls: {
@@ -61,7 +106,8 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Playground: Story = {};
+/** Shown at the top of the Docs page; hidden from the sidebar, because the Docs page replaces it. */
+export const Playground: Story = { tags: ['!dev'] };
 
 const appearances: ButtonAppearance[] = ['filled', 'outlined', 'text'];
 const variants: ButtonVariant[] = ['primary', 'neutral', 'destructive', 'inverse'];
@@ -69,6 +115,8 @@ const sizes: ButtonSize[] = ['small', 'medium', 'large'];
 
 /** Every Appearance × Variant × Size, like the Figma component set. Inverse sits on the inverse surface. */
 export const AllVariants: Story = {
+  // Its own sidebar page (and CI screenshots), but not on the Docs page.
+  tags: ['!autodocs'],
   parameters: { tokenInspector: { disable: true } },
   render: () => (
     <div style={{ display: 'grid', gap: 24 }}>

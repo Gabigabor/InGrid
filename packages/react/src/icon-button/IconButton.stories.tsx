@@ -16,6 +16,8 @@ const Plus = () => (
 const meta = {
   title: 'Inputs/Icon Button',
   component: IconButton,
+  // Docs page: the live example with a "Show code" button, then the property table with controls.
+  tags: ['autodocs'],
   args: {
     icon: <Plus />,
     'aria-label': 'Add',
@@ -24,25 +26,54 @@ const meta = {
     size: 'medium',
     isDisabled: false,
   },
-  // Controls are listed in this order. Names match the Figma component properties.
+  // Controls and the property table are listed in this order. Names match the Figma component properties.
   argTypes: {
     'aria-label': {
       name: 'Accessible label',
       control: 'text',
-      description: 'Read by screen readers. Every icon button needs one.',
+      description: 'Required. Read by screen readers, because the button has no visible text. Prop: `aria-label`.',
+      table: { type: { summary: 'string' } },
     },
-    appearance: { name: 'Type', control: 'inline-radio', options: ['filled', 'outlined', 'text'] },
+    appearance: {
+      name: 'Type',
+      control: 'radio',
+      options: ['filled', 'outlined', 'text'],
+      description: 'Emphasis: Filled (highest), Outlined (medium), Text (lowest). Prop: `appearance`.',
+      table: { type: { summary: "'filled' | 'outlined' | 'text'" }, defaultValue: { summary: 'filled' } },
+    },
     variant: {
       name: 'Color',
-      control: 'inline-radio',
+      control: 'radio',
       options: ['primary', 'neutral', 'destructive', 'inverse'],
-      description: 'Inverse is meant for dark backgrounds.',
+      description:
+        'Primary for the main action, Neutral for secondary actions, Destructive for actions that delete or can’t be undone, Inverse only on dark backgrounds. Prop: `variant`.',
+      table: {
+        type: { summary: "'primary' | 'neutral' | 'destructive' | 'inverse'" },
+        defaultValue: { summary: 'primary' },
+      },
     },
-    size: { name: 'Size', control: 'inline-radio', options: ['small', 'medium', 'large'] },
-    isDisabled: { name: 'Disabled', control: 'boolean' },
+    size: {
+      name: 'Size',
+      control: 'radio',
+      options: ['small', 'medium', 'large'],
+      description: 'Width and height: Small 24 px, Medium 32 px, Large 44 px. Prop: `size`.',
+      table: { type: { summary: "'small' | 'medium' | 'large'" }, defaultValue: { summary: 'medium' } },
+    },
+    isDisabled: {
+      name: 'Disabled',
+      control: 'boolean',
+      description: 'Uses the shared 25% disabled colours and ignores presses. Prop: `isDisabled`.',
+      table: { type: { summary: 'boolean' }, defaultValue: { summary: 'false' } },
+    },
     icon: { table: { disable: true } },
   },
   parameters: {
+    docs: {
+      description: {
+        component:
+          'A square button that shows only an icon (prop `icon`, required: any SVG drawn with currentColor, sized by the button). Hovered, Pressed and Focused come from React Aria, so they aren’t props. Uses the same Inputs tokens as Button.',
+      },
+    },
     // Tokens tab next to Controls: which Ingrid token is behind each property of the icon button.
     tokenInspector: { selector: '.ingrid-icon-button' },
     controls: { include: ['Accessible label', 'Type', 'Color', 'Size', 'Disabled'] },
@@ -51,7 +82,8 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Playground: Story = {};
+/** Shown at the top of the Docs page; hidden from the sidebar, because the Docs page replaces it. */
+export const Playground: Story = { tags: ['!dev'] };
 
 const appearances: IconButtonAppearance[] = ['filled', 'outlined', 'text'];
 const variants: IconButtonVariant[] = ['primary', 'neutral', 'destructive', 'inverse'];
@@ -59,6 +91,8 @@ const sizes: IconButtonSize[] = ['small', 'medium', 'large'];
 
 /** Every Appearance × Variant × Size, like the Figma component set. Inverse sits on the inverse surface. */
 export const AllVariants: Story = {
+  // Its own sidebar page (and CI screenshots), but not on the Docs page.
+  tags: ['!autodocs'],
   parameters: { tokenInspector: { disable: true } },
   render: () => (
     <div style={{ display: 'grid', gap: 24 }}>
