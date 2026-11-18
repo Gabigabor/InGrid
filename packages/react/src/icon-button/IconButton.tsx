@@ -37,6 +37,8 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(functio
       data-appearance={appearance}
       data-variant={variant}
       data-size={size}
+      // Inverse always sits on a dark background, so it is locked to the Light colour mode, also in Dark mode.
+      data-theme={variant === 'inverse' ? 'light' : undefined}
     >
       <span className="ingrid-icon-button__icon" aria-hidden="true">
         {icon}

@@ -19,6 +19,17 @@ const meta = {
   component: Button,
   // Docs page: the live example with a "Show code" button, then the property table with controls.
   tags: ['autodocs'],
+  // Inverse is shown on its dark background, locked to Light mode like the component itself.
+  decorators: [
+    (Story, { args }) =>
+      args.variant === 'inverse' ? (
+        <div data-theme="light" style={{ display: 'inline-block', padding: 16, background: 'var(--ingrid-color-surface-inverse)' }}>
+          <Story />
+        </div>
+      ) : (
+        <Story />
+      ),
+  ],
   args: {
     children: 'Button',
     appearance: 'filled',
@@ -125,6 +136,7 @@ export const AllVariants: Story = {
           {variants.map((variant) => (
             <div
               key={variant}
+              data-theme={variant === 'inverse' ? 'light' : undefined}
               style={{
                 display: 'flex', gap: 12, alignItems: 'center', padding: 8,
                 background: variant === 'inverse' ? 'var(--ingrid-color-surface-inverse)' : undefined,

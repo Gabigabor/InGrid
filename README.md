@@ -74,6 +74,14 @@ import { Button } from '@ingrid/react';
 
 Hovered, Pressed and Focused aren't props. React Aria tracks them (`data-hovered`, `data-pressed`, `data-focus-visible`), and the CSS applies the matching state-overlay tokens. The focus ring appears only for keyboard focus. All other React Aria Button props, such as `onPress`, `type` and `aria-label`, pass through.
 
+**Inverse** is for dark backgrounds only and is locked to the Light colour mode, so it looks the same in Dark mode (the component sets `data-theme="light"` on itself). Give the dark container behind it the same lock:
+
+```tsx
+<div data-theme="light" style={{ background: 'var(--ingrid-color-surface-inverse)' }}>
+  <Button variant="inverse">Continue</Button>
+</div>
+```
+
 ### Icon Button
 
 A square button that shows only an icon. It uses the same Inputs tokens as Button, so the colours, states and sizes match.

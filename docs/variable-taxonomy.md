@@ -1,6 +1,6 @@
 # Ingrid variable taxonomy
 
-_Last updated: 23 October 2026_
+_Last updated: 18 November 2026_
 
 The reference for how Ingrid's Figma variables are structured, named and changed. Every change to a variable should follow these rules.
 
@@ -174,7 +174,9 @@ The collection has two top-level groups, by variable type: `color/` holds every 
 
 Colour tokens follow `color/<variant>/<appearance>/<part>`: variant is the colour (primary, neutral, destructive, inverse), appearance is the emphasis (filled, outlined, text), part is what it colours (background, border, label).
 
-**Inverse inputs are only for dark backgrounds** (`surface/inverse`, which is light in Dark mode). Their colours, state overlays and disabled colours are all mirrored for that background. On normal surfaces, use Primary or Neutral.
+**Inverse inputs are only for dark backgrounds** (`surface/inverse` in Light mode). Their colours, state overlays and disabled colours are all mirrored for that background. On normal surfaces, use Primary or Neutral.
+
+**Inverse is locked to Light mode.** Inverse inputs and the dark background they sit on look the same in Light and Dark mode. Their Inputs tokens are unchanged; instead the Colors mode is fixed to Light: in Figma, every Inverse variant (and any frame that is their dark background) has an explicit Colors mode of Light; in code, the component sets `data-theme="light"` on itself, and the dark container behind it needs `data-theme="light"` too. This applies only to Inverse; every other variant follows the page’s mode.
 
 Rules:
 
