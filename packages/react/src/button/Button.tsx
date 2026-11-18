@@ -52,6 +52,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
       data-appearance={appearance}
       data-variant={variant}
       data-size={size}
+      // Inverse always sits on a dark background, so it is locked to the Light colour mode, also in Dark mode.
+      data-theme={variant === 'inverse' ? 'light' : undefined}
     >
       {composeRenderProps(children, (content) => (
         <>
